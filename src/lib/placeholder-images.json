@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "doctor-profile",
-      "description": "Foto da recepção de uma clínica moderna e sofisticada, com uma atendente no balcão.",
-      "imageUrl": "https://i.imgur.com/QqJEKsX.png",
-      "imageHint": "modern clinic"
+      "description": "Foto de perfil da Dra. Fernanda Costa.",
+      "imageUrl": "https://i.imgur.com/DLvS1IE.png",
+      "imageHint": "woman doctor"
     }
   ]
 }
