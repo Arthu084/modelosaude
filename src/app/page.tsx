@@ -111,7 +111,7 @@ export default function Home() {
               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
                 {profileData.frase}
               </h1>
-               <div className="w-full max-w-xs">
+               <div className="w-full max-w-xs pt-2">
                 {profileImage && (
                   <Image
                     src="https://i.imgur.com/QqJEKsX.png"
@@ -127,7 +127,7 @@ export default function Home() {
               <Button
                 asChild
                 size="lg"
-                className="w-full max-w-sm font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105"
+                className="w-full max-w-xs font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105"
               >
                 <Link
                   href={profileData.whatsapp}
@@ -181,7 +181,7 @@ export default function Home() {
                 <Button
                   asChild
                   size="lg"
-                  className="mt-8 w-full max-w-md font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105"
+                  className="mt-8 w-full max-w-xs font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105"
                 >
                   <Link
                     href={profileData.whatsapp}
