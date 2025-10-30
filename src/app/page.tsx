@@ -8,7 +8,6 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { WhatsAppIcon } from '@/components/icons/whatsapp-icon';
 import {
   Accordion,
   AccordionContent,
@@ -90,7 +89,7 @@ export default function Home() {
           <Button
             asChild
             size="sm"
-            className="hidden sm:flex rounded-md shadow-md transition-transform transform hover:scale-105"
+            className="hidden sm:flex rounded-md shadow-md transition-transform transform hover:scale-105 text-sm"
           >
             <Link
               href={profileData.whatsapp}
@@ -108,10 +107,14 @@ export default function Home() {
         <section id="hero" className="py-8 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
+               <p className="font-semibold text-primary pt-2">{profileData.headline}</p>
+              <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
+                {profileData.frase}
+              </h1>
                <div className="w-full max-w-xs">
                 {profileImage && (
                   <Image
-                    src={profileImage.imageUrl}
+                    src="https://i.imgur.com/QqJEKsX.png"
                     alt={profileData.nome}
                     width={320}
                     height={320}
@@ -120,15 +123,11 @@ export default function Home() {
                   />
                 )}
               </div>
-              <p className="font-semibold text-primary pt-2">{profileData.headline}</p>
-              <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
-                {profileData.frase}
-              </h1>
-
+             
               <Button
                 asChild
                 size="lg"
-                className="mt-4 w-full max-w-sm font-bold py-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+                className="w-full max-w-sm font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105"
               >
                 <Link
                   href={profileData.whatsapp}
@@ -182,7 +181,7 @@ export default function Home() {
                 <Button
                   asChild
                   size="lg"
-                  className="mt-8 w-full max-w-md font-bold py-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+                  className="mt-8 w-full max-w-md font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105"
                 >
                   <Link
                     href={profileData.whatsapp}
@@ -228,5 +227,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
