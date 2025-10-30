@@ -72,9 +72,9 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-dvh bg-background font-body text-foreground">
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b">
-        <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+        <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Avatar className="w-12 h-12">
+            <Avatar className="w-10 h-10">
               {profileImage && (
                 <AvatarImage
                   src={profileImage.imageUrl}
@@ -87,12 +87,13 @@ export default function Home() {
               </AvatarFallback>
             </Avatar>
             <div>
-              <p className="font-bold text-lg">{profileData.nome}</p>
-              <p className="text-sm text-muted-foreground">{profileData.especialidade}</p>
+              <p className="font-bold text-base">{profileData.nome}</p>
+              <p className="text-xs text-muted-foreground">{profileData.especialidade}</p>
             </div>
           </div>
           <Button
             asChild
+            size="sm"
             className="hidden sm:flex rounded-full shadow-md transition-transform transform hover:scale-105 bg-[#25D366] hover:bg-[#25D366]/90 text-white font-semibold"
           >
             <Link
@@ -100,7 +101,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <WhatsAppIcon className="mr-2 h-5 w-5" />
+              <WhatsAppIcon className="mr-2 h-4 w-4" />
               Agendar consulta
             </Link>
           </Button>
@@ -109,76 +110,76 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section id="hero" className="py-8 md:py-12 bg-primary/5">
+        <section id="hero" className="py-8 bg-primary/5">
           <div className="container mx-auto px-4">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
-                <p className="font-semibold text-primary">{profileData.atendimento}</p>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight">
-                  {profileData.headline}
-                </h1>
-                <p className="text-lg md:text-xl text-foreground/80 max-w-xl">
-                  {profileData.frase}
-                </p>
-                <Button
-                  asChild
-                  size="lg"
-                  className="mt-6 w-full max-w-sm text-lg font-bold py-8 rounded-full shadow-lg transition-transform transform hover:scale-105 bg-[#25D366] hover:bg-[#25D366]/90 text-white"
+            <div className="flex flex-col items-center text-center space-y-4">
+              <p className="font-semibold text-primary">{profileData.atendimento}</p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter">
+                {profileData.headline}
+              </h1>
+              <p className="text-md md:text-lg text-foreground/80 max-w-2xl">
+                {profileData.frase}
+              </p>
+              
+              <div className="w-full max-w-md lg:max-w-lg pt-4">
+                {profileImage && (
+                  <Image
+                    src={profileImage.imageUrl}
+                    alt={profileData.nome}
+                    width={500}
+                    height={500}
+                    className="rounded-2xl shadow-xl object-cover aspect-square w-full"
+                    data-ai-hint={profileImage.imageHint}
+                  />
+                )}
+              </div>
+
+              <Button
+                asChild
+                size="lg"
+                className="mt-4 w-full max-w-sm text-lg font-bold py-6 rounded-full shadow-lg transition-transform transform hover:scale-105 bg-[#25D366] hover:bg-[#25D366]/90 text-white"
+              >
+                <Link
+                  href={profileData.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Link
-                    href={profileData.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <WhatsAppIcon className="mr-3 h-6 w-6" />
-                    Agende sua avaliação
-                  </Link>
-                </Button>
-                <p className="text-sm text-muted-foreground pt-2">{profileData.especialidade} | {profileData.crm}</p>
-              </div>
-              <div className="flex justify-center">
-                 {profileImage && (
-                    <Image
-                      src={profileImage.imageUrl}
-                      alt={profileData.nome}
-                      width={500}
-                      height={500}
-                      className="rounded-2xl shadow-2xl object-cover aspect-square"
-                       data-ai-hint={profileImage.imageHint}
-                    />
-                  )}
-              </div>
+                  <WhatsAppIcon className="mr-3 h-6 w-6" />
+                  Agende sua avaliação
+                </Link>
+              </Button>
+              <p className="text-sm text-muted-foreground pt-1">{profileData.especialidade} | {profileData.crm}</p>
             </div>
           </div>
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-12 md:py-16">
+        <section id="about" className="py-12">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">Sobre a Profissional</h2>
-                <p className="text-lg text-foreground/80 leading-relaxed mb-8">{profileData.sobre.texto}</p>
-                <div className="grid md:grid-cols-2 gap-8 text-left">
-                  <div className="bg-primary/5 p-6 rounded-lg">
-                    <h3 className="font-bold text-xl mb-2 text-primary flex items-center"><HeartPulse className="mr-2 h-5 w-5"/> Formação</h3>
-                    <p className="text-foreground/80">{profileData.sobre.formacao}</p>
+                <h2 className="text-3xl font-bold mb-4">Sobre a Profissional</h2>
+                <p className="text-md text-foreground/80 leading-relaxed mb-6">{profileData.sobre.texto}</p>
+                <div className="grid md:grid-cols-2 gap-6 text-left">
+                  <div className="bg-primary/5 p-4 rounded-lg">
+                    <h3 className="font-bold text-lg mb-2 text-primary flex items-center"><HeartPulse className="mr-2 h-5 w-5"/> Formação</h3>
+                    <p className="text-sm text-foreground/80">{profileData.sobre.formacao}</p>
                   </div>
-                   <div className="bg-primary/5 p-6 rounded-lg">
-                    <h3 className="font-bold text-xl mb-2 text-primary flex items-center"><HeartPulse className="mr-2 h-5 w-5"/> Atuação</h3>
-                    <p className="text-foreground/80">{profileData.sobre.atuacao}</p>
+                   <div className="bg-primary/5 p-4 rounded-lg">
+                    <h3 className="font-bold text-lg mb-2 text-primary flex items-center"><HeartPulse className="mr-2 h-5 w-5"/> Atuação</h3>
+                    <p className="text-sm text-foreground/80">{profileData.sobre.atuacao}</p>
                   </div>
                 </div>
             </div>
         </section>
 
         {/* Benefits Section */}
-        <section id="benefits" className="py-12 md:py-16 bg-primary/5">
+        <section id="benefits" className="py-12 bg-primary/5">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Como posso te ajudar</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+            <h2 className="text-3xl font-bold text-center mb-6">Como posso te ajudar</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
                 {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start">
-                        <CheckCircle2 className="h-6 w-6 text-green-500 mr-3 mt-1 flex-shrink-0" />
-                        <p className="text-lg text-foreground/80">{benefit.text}</p>
+                        <CheckCircle2 className="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                        <p className="text-md text-foreground/80">{benefit.text}</p>
                     </div>
                 ))}
             </div>
@@ -186,16 +187,16 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-12 md:py-16">
+        <section id="testimonials" className="py-12">
             <div className="container mx-auto px-4 max-w-5xl">
-                <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Depoimentos de Pacientes</h2>
-                <div className="grid md:grid-cols-3 gap-8">
+                <h2 className="text-3xl font-bold text-center mb-6">Depoimentos de Pacientes</h2>
+                <div className="grid md:grid-cols-3 gap-6">
                 {testimonials.map((testimonial, index) => (
-                    <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-2 border-0 bg-card">
+                    <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 border-0 bg-card">
                         <CardContent className="pt-6">
-                            <Quote className="h-8 w-8 text-primary/20 mb-4 mx-auto" />
-                            <p className="text-muted-foreground italic">"{testimonial.quote}"</p>
-                            <p className="font-bold mt-4">- {testimonial.author}</p>
+                            <Quote className="h-6 w-6 text-primary/20 mb-3 mx-auto" />
+                            <p className="text-muted-foreground text-sm italic">"{testimonial.quote}"</p>
+                            <p className="font-bold text-sm mt-3">- {testimonial.author}</p>
                         </CardContent>
                     </Card>
                 ))}
@@ -204,44 +205,44 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section id="contact" className="py-12 md:py-16 bg-primary/5">
+        <section id="contact" className="py-12 bg-primary/5">
             <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Agende sua Consulta</h2>
-                <p className="text-lg text-foreground/80 mb-8">Escolha a melhor forma de entrar em contato. Clique no botão abaixo e fale diretamente comigo ou com minha equipe para agendar sua consulta.</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-left">
+                <h2 className="text-3xl font-bold mb-3">Agende sua Consulta</h2>
+                <p className="text-md text-foreground/80 mb-6">Escolha a melhor forma de entrar em contato. Clique no botão abaixo e fale diretamente comigo ou com minha equipe para agendar sua consulta.</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-left">
                   <Link href={profileData.whatsapp} target='_blank' rel="noopener noreferrer" className="bg-card p-4 rounded-lg flex items-center hover:bg-muted transition-colors">
-                    <WhatsAppIcon className="h-7 w-7 text-green-500 mr-4"/>
+                    <WhatsAppIcon className="h-6 w-6 text-green-500 mr-3"/>
                     <div>
-                      <h4 className="font-bold">WhatsApp</h4>
-                      <p className="text-sm text-muted-foreground">Agendamento rápido</p>
+                      <h4 className="font-bold text-sm">WhatsApp</h4>
+                      <p className="text-xs text-muted-foreground">Agendamento rápido</p>
                     </div>
                   </Link>
                    <Link href={profileData.telefone} className="bg-card p-4 rounded-lg flex items-center hover:bg-muted transition-colors">
-                    <Phone className="h-7 w-7 text-primary mr-4"/>
+                    <Phone className="h-6 w-6 text-primary mr-3"/>
                     <div>
-                      <h4 className="font-bold">Telefone</h4>
-                      <p className="text-sm text-muted-foreground">Fale com a recepção</p>
+                      <h4 className="font-bold text-sm">Telefone</h4>
+                      <p className="text-xs text-muted-foreground">Fale com a recepção</p>
                     </div>
                   </Link>
                   <Link href={profileData.endereco.linkMapa} target='_blank' rel="noopener noreferrer" className="bg-card p-4 rounded-lg flex items-center hover:bg-muted transition-colors">
-                    <MapPin className="h-7 w-7 text-primary mr-4"/>
+                    <MapPin className="h-6 w-6 text-primary mr-3"/>
                     <div>
-                      <h4 className="font-bold">Endereço</h4>
-                      <p className="text-sm text-muted-foreground">{profileData.endereco.rua}</p>
+                      <h4 className="font-bold text-sm">Endereço</h4>
+                      <p className="text-xs text-muted-foreground">{profileData.endereco.rua}</p>
                     </div>
                   </Link>
                   <Link href={profileData.atendimentoOnline} target='_blank' rel="noopener noreferrer" className="bg-card p-4 rounded-lg flex items-center hover:bg-muted transition-colors">
-                    <Video className="h-7 w-7 text-primary mr-4"/>
+                    <Video className="h-6 w-6 text-primary mr-3"/>
                     <div>
-                      <h4 className="font-bold">Atendimento Online</h4>
-                      <p className="text-sm text-muted-foreground">Consulte de onde estiver</p>
+                      <h4 className="font-bold text-sm">Atendimento Online</h4>
+                      <p className="text-xs text-muted-foreground">Consulte de onde estiver</p>
                     </div>
                   </Link>
                 </div>
                  <Button
                   asChild
                   size="lg"
-                  className="mt-6 w-full max-w-md text-lg font-bold py-8 rounded-full shadow-lg transition-transform transform hover:scale-105 bg-[#25D366] hover:bg-[#25D366]/90 text-white"
+                  className="w-full max-w-md text-lg font-bold py-6 rounded-full shadow-lg transition-transform transform hover:scale-105 bg-[#25D366] hover:bg-[#25D366]/90 text-white"
                 >
                   <Link
                     href={profileData.whatsapp}
@@ -255,10 +256,10 @@ export default function Home() {
         </section>
 
          {/* Location Section */}
-        <section id="location" className="py-12 md:py-16">
+        <section id="location" className="py-12">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Localização</h2>
-                <p className="text-lg text-muted-foreground mb-8">
+                <h2 className="text-3xl font-bold mb-3">Localização</h2>
+                <p className="text-md text-muted-foreground mb-6">
                     📍 {profileData.endereco.nomeClinica} - {profileData.endereco.rua}, {profileData.endereco.cidade}
                 </p>
                 <div className="aspect-video rounded-lg overflow-hidden border shadow-md">
@@ -276,7 +277,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="pb-8 pt-12 bg-muted/50 border-t">
+      <footer className="py-8 bg-muted/50 border-t">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
             <p className="font-semibold text-sm">{profileData.nome} – {profileData.especialidade}</p>
             <p className="text-sm">{profileData.crm}</p>
@@ -286,3 +287,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
