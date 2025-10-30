@@ -81,7 +81,7 @@ export default function Home() {
             </Avatar>
             <div>
               <p className="font-bold text-base">{profileData.nome}</p>
-              <p className="text-xs text-muted-foreground">{profileData.especialidade}</p>
+              <p className="text-xs text-muted-foreground">{profileData.especialidade} | {profileData.crm}</p>
             </div>
           </div>
           <Button
@@ -123,9 +123,7 @@ export default function Home() {
                   />
                 )}
               </div>
-              <p className="text-md text-foreground/80 max-w-2xl pt-2">
-                {profileData.especialidade} | {profileData.crm}
-              </p>
+              
 
               <Button
                 asChild
