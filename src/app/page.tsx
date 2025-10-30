@@ -238,7 +238,7 @@ export default function Home() {
         {/* Benefits Section */}
         <section id="benefits" className="py-8">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-xl font-bold text-center mb-6">Como posso te ajudar</h2>
+            <h2 className="text-xl font-bold text-center mb-4">Como posso te ajudar</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
                 {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-center p-2 rounded-lg">
@@ -253,7 +253,7 @@ export default function Home() {
         {/* Treatments Section */}
         <section id="treatments" className="py-8 bg-primary/5">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <h2 className="text-xl font-bold mb-6">Tratamentos e Procedimentos</h2>
+                <h2 className="text-xl font-bold mb-4">Tratamentos e Procedimentos</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1 text-left">
                     {treatmentItems.map((item, index) => (
                         <div key={index} className="flex items-center p-2 rounded-lg">
@@ -262,7 +262,7 @@ export default function Home() {
                         </div>
                     ))}
                 </div>
-                <p className="text-sm text-muted-foreground mt-6 italic max-w-2xl mx-auto">
+                <p className="text-sm text-muted-foreground mt-4 italic max-w-2xl mx-auto">
                     “Cada tratamento é personalizado de acordo com a necessidade e o tipo de pele do paciente.”
                 </p>
             </div>
@@ -271,7 +271,7 @@ export default function Home() {
         {/* Professional Recognition Section */}
         <section id="recognition" className="py-8">
             <div className="container mx-auto px-4 max-w-4xl">
-                <h2 className="text-xl font-bold text-center mb-6">Reconhecimento Profissional</h2>
+                <h2 className="text-xl font-bold text-center mb-4">Reconhecimento Profissional</h2>
                 <div className="grid grid-cols-1 gap-y-2">
                     {recognitionItems.map((item, index) => (
                         <div key={index} className="flex items-center p-4 rounded-lg bg-card border shadow-sm">
@@ -285,8 +285,21 @@ export default function Home() {
 
         {/* Testimonials Section */}
         <section id="testimonials" className="py-8 bg-primary/5">
-            <div className="container mx-auto px-4 max-w-5xl">
+            <div className="container mx-auto px-4 max-w-5xl text-center">
                 <h2 className="text-xl font-bold text-center mb-6">O que minhas pacientes dizem</h2>
+                <Button
+                  asChild
+                  size="lg"
+                  className="mb-8 w-full max-w-xs font-bold py-6 text-xs rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
+                >
+                  <Link
+                    href={profileData.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    AGENDAR MINHA CONSULTA
+                  </Link>
+                </Button>
                 <TestimonialCarousel />
             </div>
         </section>
@@ -294,7 +307,7 @@ export default function Home() {
         {/* Clinic Features Section */}
         <section id="clinic-features" className="py-8">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-xl font-bold text-center mb-6">Diferenciais da clínica</h2>
+            <h2 className="text-xl font-bold text-center mb-4">Diferenciais da clínica</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1">
               {clinicFeatures.map((feature, index) => (
                 <div key={index} className="flex items-center p-2 rounded-lg">
@@ -339,8 +352,8 @@ export default function Home() {
         {/* Connect Section */}
         <section id="connect" className="py-8 bg-muted/40">
             <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-xl font-bold mb-6">Conecte-se Comigo</h2>
-                <div className="flex flex-col gap-4">
+                <h2 className="text-xl font-bold mb-4">Conecte-se Comigo</h2>
+                <div className="flex flex-col gap-3">
                     {socialLinks.map((link) => (
                         <LinkCard key={link.href} {...link} />
                     ))}
@@ -351,8 +364,8 @@ export default function Home() {
          {/* Location Section */}
         <section id="location" className="py-8 bg-muted/50">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <h2 className="text-xl font-bold mb-6">Onde me encontrar</h2>
-                <p className="text-md text-muted-foreground mb-6">
+                <h2 className="text-xl font-bold mb-4">Onde me encontrar</h2>
+                <p className="text-md text-muted-foreground mb-4">
                     <MapPin className="inline-block h-5 w-5 mr-2 text-primary" />
                     {profileData.endereco.nomeClinica} - {profileData.endereco.rua}, {profileData.endereco.cidade}
                 </p>
@@ -373,7 +386,7 @@ export default function Home() {
 
       <footer className="py-8 bg-muted border-t">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-            <p className="text-xs mt-4">Todos os direitos reservados. © {new Date().getFullYear()}</p>
+            <p className="text-xs">Todos os direitos reservados. © {new Date().getFullYear()}</p>
         </div>
       </footer>
 
