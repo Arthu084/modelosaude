@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "doctor-profile",
-      "description": "Foto do interior de uma clínica médica moderna e limpa.",
-      "imageUrl": "https://images.unsplash.com/photo-1645026675464-a41ada8ac025?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjbGluaWMlMjBpbnRlcmlvcnxlbnwwfHx8fDE3NjE4NTY5Mzh8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "clinic interior"
+      "description": "Foto do interior de uma clínica de dermatologia moderna e limpa.",
+      "imageUrl": "https://images.unsplash.com/photo-1629837929853-fde3532d0c2b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxkZXJtYXRvbG9neSUyMGNsaW5pY3xlbnwwfHx8fDE3NjkyNjAzNzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dermatology clinic"
     }
   ]
 }
