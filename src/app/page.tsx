@@ -97,7 +97,6 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <WhatsAppIcon className="mr-2 h-4 w-4" />
               AGENDAR MINHA CONSULTA
             </Link>
           </Button>
@@ -129,7 +128,7 @@ export default function Home() {
               <Button
                 asChild
                 size="lg"
-                className="mt-4 w-full max-w-sm text-lg font-bold py-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+                className="mt-4 w-full max-w-sm font-bold py-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
               >
                 <Link
                   href={profileData.whatsapp}
@@ -183,7 +182,7 @@ export default function Home() {
                 <Button
                   asChild
                   size="lg"
-                  className="mt-8 w-full max-w-md text-lg font-bold py-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+                  className="mt-8 w-full max-w-md font-bold py-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
                 >
                   <Link
                     href={profileData.whatsapp}
@@ -229,3 +228,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
