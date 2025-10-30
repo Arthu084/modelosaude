@@ -165,7 +165,7 @@ export default function Home() {
              <Button
                 asChild
                 size="sm"
-                className="rounded-md shadow-md transition-transform transform hover:scale-105 text-xs"
+                className="rounded-md shadow-md transition-transform transform hover:scale-105 text-sm"
               >
                 <Link
                   href={profileData.whatsapp}
@@ -221,7 +221,7 @@ export default function Home() {
               <Button
                 asChild
                 size="lg"
-                className="w-full max-w-xs font-bold py-6 text-xs rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
+                className="w-full max-w-xs font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
               >
                 <Link
                   href={profileData.whatsapp}
@@ -323,7 +323,7 @@ export default function Home() {
                 <Button
                   asChild
                   size="lg"
-                  className="mt-8 w-full max-w-xs font-bold py-6 text-xs rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
+                  className="mt-8 w-full max-w-xs font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
                 >
                   <Link
                     href={profileData.whatsapp}
