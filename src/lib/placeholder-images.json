@@ -2,9 +2,9 @@
   "placeholderImages": [
     {
       "id": "doctor-profile",
-      "description": "Foto da recepção de uma clínica com uma atendente no balcão.",
-      "imageUrl": "https://images.unsplash.com/photo-1691090339835-60288a93e1fa?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjbGluaWMlMjByZWNlcHRpb258ZW58MHx8fHwxNzYxODA2ODkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "clinic reception"
+      "description": "Foto da recepção de uma clínica moderna e sofisticada, com uma atendente no balcão.",
+      "imageUrl": "https://images.unsplash.com/photo-1629424115421-a6b633797086?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjbGluaWMlMjByZWNlcHRpb258ZW58MHx8fHwxNzE2NTgxODg3fDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "modern clinic"
     }
   ]
 }
