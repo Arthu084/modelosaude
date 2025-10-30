@@ -109,7 +109,7 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section id="hero" className="py-6 md:py-12 bg-primary/5">
+        <section id="hero" className="py-8 md:py-12 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
@@ -153,9 +153,9 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-16 md:py-24">
+        <section id="about" className="py-12 md:py-16">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Sobre a Profissional</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">Sobre a Profissional</h2>
                 <p className="text-lg text-foreground/80 leading-relaxed mb-8">{profileData.sobre.texto}</p>
                 <div className="grid md:grid-cols-2 gap-8 text-left">
                   <div className="bg-primary/5 p-6 rounded-lg">
@@ -171,9 +171,9 @@ export default function Home() {
         </section>
 
         {/* Benefits Section */}
-        <section id="benefits" className="py-16 md:py-24 bg-primary/5">
+        <section id="benefits" className="py-12 md:py-16 bg-primary/5">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Como posso te ajudar</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Como posso te ajudar</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                 {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start">
@@ -186,9 +186,9 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-16 md:py-24">
+        <section id="testimonials" className="py-12 md:py-16">
             <div className="container mx-auto px-4 max-w-5xl">
-                <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Depoimentos de Pacientes</h2>
+                <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Depoimentos de Pacientes</h2>
                 <div className="grid md:grid-cols-3 gap-8">
                 {testimonials.map((testimonial, index) => (
                     <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-2 border-0 bg-card">
@@ -204,7 +204,7 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section id="contact" className="py-16 md:py-24 bg-primary/5">
+        <section id="contact" className="py-12 md:py-16 bg-primary/5">
             <div className="container mx-auto px-4 max-w-3xl text-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">Agende sua Consulta</h2>
                 <p className="text-lg text-foreground/80 mb-8">Escolha a melhor forma de entrar em contato. Clique no botão abaixo e fale diretamente comigo ou com minha equipe para agendar sua consulta.</p>
@@ -255,7 +255,7 @@ export default function Home() {
         </section>
 
          {/* Location Section */}
-        <section id="location" className="py-16 md:py-24">
+        <section id="location" className="py-12 md:py-16">
             <div className="container mx-auto px-4 max-w-4xl text-center">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">Localização</h2>
                 <p className="text-lg text-muted-foreground mb-8">
