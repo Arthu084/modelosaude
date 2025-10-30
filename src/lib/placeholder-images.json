@@ -5,6 +5,12 @@
       "description": "Foto de perfil da Dra. Fernanda Costa.",
       "imageUrl": "https://i.imgur.com/DLvS1IE.png",
       "imageHint": "woman doctor"
+    },
+    {
+      "id": "doctor-hero",
+      "description": "Imagem de destaque da Dra. Fernanda Costa.",
+      "imageUrl": "https://i.imgur.com/QqJEKsX.png",
+      "imageHint": "doctor office"
     }
   ]
 }

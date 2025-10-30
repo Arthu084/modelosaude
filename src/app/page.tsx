@@ -24,6 +24,7 @@ const profileData = {
   frase: 'Cuidando da sua saúde com atenção, empatia e ciência.',
   headline: 'Dermatologia Clínica e Estética',
   fotoPerfilId: 'doctor-profile',
+  fotoHeroId: 'doctor-hero',
   whatsapp: 'https://wa.me/5511999999999',
   telefone: 'tel:+5511999999999',
   endereco: {
@@ -62,6 +63,9 @@ const faqItems = [
 export default function Home() {
   const profileImage = PlaceHolderImages.find(
     (p) => p.id === profileData.fotoPerfilId
+  );
+  const heroImage = PlaceHolderImages.find(
+    (p) => p.id === profileData.fotoHeroId
   );
 
   return (
@@ -112,14 +116,14 @@ export default function Home() {
                 {profileData.frase}
               </h1>
                <div className="w-full max-w-xs pt-2">
-                {profileImage && (
+                {heroImage && (
                   <Image
-                    src={profileImage.imageUrl}
+                    src={heroImage.imageUrl}
                     alt={profileData.nome}
                     width={320}
                     height={320}
                     className="rounded-2xl shadow-xl object-cover aspect-square w-full mx-auto"
-                    data-ai-hint={profileImage.imageHint}
+                    data-ai-hint={heroImage.imageHint}
                   />
                 )}
               </div>
