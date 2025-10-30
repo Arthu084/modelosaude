@@ -63,14 +63,14 @@ export function TestimonialCarousel() {
           {testimonials.map((testimonial, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1 h-full">
-                <Card className="flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 border-0 bg-card p-4">
+                <Card className="flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 border-0 bg-card p-6">
                   <CardContent className="p-0 text-center">
-                    <Quote className="h-6 w-6 text-primary/20 mb-2 mx-auto" />
+                    <Quote className="h-8 w-8 text-primary/20 mb-4 mx-auto" />
                     <p className="text-muted-foreground text-sm italic leading-relaxed">
                       "{testimonial.quote}"
                     </p>
                   </CardContent>
-                  <div className="p-0 pt-2 text-center">
+                  <div className="p-0 pt-4 text-center">
                      <p className="font-bold text-sm mt-2">- {testimonial.author}</p>
                   </div>
                 </Card>
@@ -79,7 +79,7 @@ export function TestimonialCarousel() {
           ))}
         </CarouselContent>
       </Carousel>
-      <div className="flex justify-center gap-2 mt-6">
+      <div className="flex justify-center gap-2 mt-8">
         {Array.from({ length: count }).map((_, index) => (
           <button
             key={index}
@@ -95,3 +95,5 @@ export function TestimonialCarousel() {
     </div>
   );
 }
+
+    
