@@ -281,17 +281,6 @@ export default function Home() {
             <p className="font-semibold text-sm">{profileData.nome} – {profileData.especialidade}</p>
             <p className="text-sm">{profileData.crm}</p>
             <p className="text-xs mt-4">Todos os atendimentos seguem as normas do CFM.</p>
-             <p className="mt-6 text-xs">
-              Desenvolvido por{' '}
-              <Link
-                href="https://firebase.google.com/docs/studio"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-primary hover:underline"
-              >
-                Studio Fire
-              </Link>
-            </p>
         </div>
       </footer>
     </div>
