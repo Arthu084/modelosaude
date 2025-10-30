@@ -9,6 +9,13 @@ import {
   ParkingCircle,
   Wifi,
   Users,
+  Award,
+  BookOpen,
+  Presentation,
+  Stethoscope,
+  Instagram,
+  Youtube,
+  Linkedin
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -21,6 +28,7 @@ import {
 } from "@/components/ui/accordion"
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
 import { WhatsAppIcon } from '@/components/icons/whatsapp-icon';
+import { LinkCard } from '@/components/link-card';
 
 const profileData = {
   nome: 'Dra. Fernanda Costa',
@@ -56,6 +64,37 @@ const clinicFeatures = [
     { icon: Wifi, text: "Wi-Fi cortesia para pacientes e acompanhantes em nossa sala de espera." },
     { icon: ParkingCircle, text: "Localização privilegiada com estacionamento conveniado próximo." },
     { icon: Users, text: "Equipe qualificada e atenciosa para um atendimento completo." }
+]
+
+const recognitionItems = [
+    { icon: Award, text: "Membro da Sociedade Brasileira de Dermatologia (SBD)" },
+    { icon: Presentation, text: "Palestrante em eventos médicos nacionais" },
+    { icon: BookOpen, text: "Artigos publicados em revistas científicas" },
+]
+
+const treatmentItems = [
+    { icon: Stethoscope, text: "Controle da acne e manchas" },
+    { icon: Stethoscope, text: "Preenchimento facial e toxina botulínica" },
+    { icon: Stethoscope, text: "Rejuvenescimento a laser" },
+    { icon: Stethoscope, text: "Cuidados com Melasma" },
+]
+
+const socialLinks = [
+    {
+        href: "https://instagram.com",
+        icon: Instagram,
+        title: "Siga-me no Instagram"
+    },
+    {
+        href: "https://youtube.com",
+        icon: Youtube,
+        title: "Acompanhe no YouTube"
+    },
+    {
+        href: "https://linkedin.com",
+        icon: Linkedin,
+        title: "Conecte-se no LinkedIn"
+    }
 ]
 
 const faqItems = [
@@ -174,6 +213,39 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Treatments Section */}
+        <section id="treatments" className="py-8 bg-primary/5">
+            <div className="container mx-auto px-4 max-w-4xl text-center">
+                <h2 className="text-xl font-bold mb-6">Tratamentos e Procedimentos</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-left">
+                    {treatmentItems.map((item, index) => (
+                        <div key={index} className="flex items-center p-3 rounded-lg">
+                            <item.icon className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
+                            <p className="text-md text-foreground/80">{item.text}</p>
+                        </div>
+                    ))}
+                </div>
+                <p className="text-sm text-muted-foreground mt-6 italic max-w-2xl mx-auto">
+                    “Cada tratamento é personalizado de acordo com a necessidade e o tipo de pele do paciente.”
+                </p>
+            </div>
+        </section>
+
+        {/* Professional Recognition Section */}
+        <section id="recognition" className="py-8">
+            <div className="container mx-auto px-4 max-w-4xl">
+                <h2 className="text-xl font-bold text-center mb-6">Reconhecimento Profissional</h2>
+                <div className="grid grid-cols-1 gap-y-4">
+                    {recognitionItems.map((item, index) => (
+                        <div key={index} className="flex items-center p-3 rounded-lg bg-card border shadow-sm">
+                            <item.icon className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
+                            <p className="text-md text-foreground/80">{item.text}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
         {/* Testimonials Section */}
         <section id="testimonials" className="py-8 bg-primary/5">
             <div className="container mx-auto px-4 max-w-5xl">
@@ -196,6 +268,19 @@ export default function Home() {
             </div>
           </div>
         </section>
+        
+        {/* Connect Section */}
+        <section id="connect" className="py-8 bg-muted/40">
+            <div className="container mx-auto px-4 max-w-3xl text-center">
+                <h2 className="text-xl font-bold mb-6">Conecte-se Comigo</h2>
+                <div className="flex flex-col gap-4">
+                    {socialLinks.map((link) => (
+                        <LinkCard key={link.href} {...link} />
+                    ))}
+                </div>
+            </div>
+        </section>
+
 
         {/* FAQ Section */}
         <section id="faq" className="py-8 bg-muted/40">
@@ -268,3 +353,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
