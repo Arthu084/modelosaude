@@ -19,11 +19,6 @@ const testimonials = [
   },
   {
     quote:
-      "Finalmente encontrei uma profissional que realmente se importa com o paciente. Resultados incríveis e um atendimento impecável do início ao fim. Recomendo de olhos fechados.",
-    author: "André P.",
-  },
-  {
-    quote:
       "Um atendimento exemplar. A Dra. Fernanda é muito atenciosa e competente. Estou muito satisfeita com o tratamento.",
     author: "Joana L.",
   },
