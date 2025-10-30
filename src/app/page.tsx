@@ -198,13 +198,16 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section id="hero" className="py-8 bg-primary/5">
+        <section id="hero" className="py-6 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
                <p className="font-semibold text-primary">{profileData.headline}</p>
               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
                 {profileData.frase}
               </h1>
+              <p className="text-lg text-muted-foreground max-w-3xl">
+                Nossa equipe está preparada para oferecer um atendimento ágil, humano e com total privacidade.
+              </p>
                <div className="w-full max-w-xs pt-2">
                 {heroImage && (
                   <Image
