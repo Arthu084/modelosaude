@@ -1,11 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {
-  Calendar,
-  BookOpen,
   Instagram,
   Youtube,
-  FileText,
   Mail,
   HeartPulse,
   Stethoscope,
@@ -16,14 +13,14 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { WhatsAppIcon } from '@/components/icons/whatsapp-icon';
-import { LinkCard } from '@/components/link-card';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const profileData = {
   nome: 'Dra. Fernanda Costa',
   especialidade: 'Dermatologista',
   crm: 'CRM-SP 98765',
-  frase: 'Cuidando da sua pele com ciência e estética.',
+  frase: 'Cuidando da sua pele com ciência e estética, para resultados que realçam sua beleza natural.',
+  headline: 'Transforme sua pele, renove sua confiança.',
   fotoPerfilId: 'doctor-profile',
   whatsapp: 'https://wa.me/5511999999999',
   email: 'mailto:contato@drafernandacosta.com',
@@ -31,28 +28,6 @@ const profileData = {
     instagram: 'https://instagram.com/drafernandacosta',
     youtube: 'https://youtube.com/@drafernandacosta',
   },
-  links: [
-    {
-      titulo: 'Cursos e E-books',
-      icone: 'book',
-      url: '#',
-    },
-    {
-      titulo: 'Instagram Profissional',
-      icone: 'instagram',
-      url: 'https://instagram.com/drafernandacosta',
-    },
-    {
-      titulo: 'Canal no YouTube',
-      icone: 'youtube',
-      url: 'https://youtube.com/@drafernandacosta',
-    },
-    {
-      titulo: 'Currículo Lattes',
-      icone: 'file-text',
-      url: '#',
-    },
-  ],
   sobre:
     'Sou médica dermatologista com foco em tratamentos clínicos e estéticos. Acredito em uma medicina baseada na confiança, na tecnologia e em resultados naturais. Minha missão é ajudar você a se sentir bem na sua própria pele, oferecendo cuidados personalizados e eficazes. Com anos de experiência e constante atualização, estou preparada para tratar desde as condições de pele mais comuns até os desafios dermatológicos mais complexos.',
 };
@@ -75,14 +50,6 @@ const services = [
   }
 ];
 
-const iconMap: { [key: string]: React.ElementType } = {
-  calendar: Calendar,
-  book: BookOpen,
-  instagram: Instagram,
-  youtube: Youtube,
-  filetext: FileText,
-};
-
 export default function Home() {
   const profileImage = PlaceHolderImages.find(
     (p) => p.id === profileData.fotoPerfilId
@@ -90,13 +57,10 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-dvh bg-background font-body text-foreground">
-      <main className="flex-grow">
-        {/* Hero Section */}
-        <section id="hero" className="bg-primary/5 py-12 md:py-24">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="flex flex-col items-center md:items-start text-center md:text-left space-y-4">
-                <Avatar className="w-32 h-32 border-4 border-background ring-4 ring-primary/50 shadow-lg">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b">
+        <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+                 <Avatar className="w-12 h-12">
                   {profileImage && (
                     <AvatarImage
                       src={profileImage.imageUrl}
@@ -104,48 +68,67 @@ export default function Home() {
                       data-ai-hint={profileImage.imageHint}
                     />
                   )}
-                  <AvatarFallback className="text-4xl bg-primary/10">
-                    {profileData.nome
-                      .split(' ')
-                      .map((n) => n[0])
-                      .slice(0, 2)
-                      .join('')}
+                  <AvatarFallback className="bg-primary/10">
+                    {profileData.nome.split(' ').map((n) => n[0]).slice(0, 2).join('')}
                   </AvatarFallback>
                 </Avatar>
-                <div className="space-y-1">
-                  <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
-                    {profileData.nome}
-                  </h1>
-                  <p className="text-lg text-muted-foreground">
-                    {profileData.especialidade} | {profileData.crm}
-                  </p>
+                <div>
+                    <p className="font-bold text-lg">{profileData.nome}</p>
+                    <p className="text-sm text-muted-foreground">{profileData.especialidade}</p>
                 </div>
-                <p className="text-xl text-foreground/80 max-w-lg pt-2">
-                  {profileData.frase}
-                </p>
-                <Button
-                  asChild
-                  size="lg"
-                  className="mt-4 w-full max-w-xs text-lg font-semibold py-7 rounded-full shadow-lg transition-transform transform hover:scale-105 bg-[#25D366] hover:bg-[#25D366]/90 text-white"
+            </div>
+             <Button
+                asChild
+                className="hidden sm:flex rounded-full shadow-md transition-transform transform hover:scale-105 bg-[#25D366] hover:bg-[#25D366]/90 text-white font-semibold"
+              >
+                <Link
+                  href={profileData.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  <Link
-                    href={profileData.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <WhatsAppIcon className="mr-2 h-5 w-5" />
+                  Agendar consulta
+                </Link>
+              </Button>
+        </div>
+      </header>
+
+      <main className="flex-grow">
+        {/* Hero Section */}
+        <section id="hero" className="py-20 md:py-32 bg-primary/5">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tighter leading-tight">
+                    {profileData.headline}
+                  </h1>
+                  <p className="text-lg md:text-xl text-foreground/80 max-w-xl">
+                    {profileData.frase}
+                  </p>
+                  <Button
+                    asChild
+                    size="lg"
+                    className="mt-6 w-full max-w-sm text-lg font-bold py-8 rounded-full shadow-lg transition-transform transform hover:scale-105 bg-[#25D366] hover:bg-[#25D366]/90 text-white"
                   >
-                    <WhatsAppIcon className="mr-3 h-6 w-6" />
-                    Agendar consulta
-                  </Link>
-                </Button>
+                    <Link
+                      href={profileData.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <WhatsAppIcon className="mr-3 h-6 w-6" />
+                      Agende sua avaliação
+                    </Link>
+                  </Button>
+                  <p className="text-sm text-muted-foreground pt-2">{profileData.especialidade} | {profileData.crm}</p>
               </div>
-              <div className="hidden md:flex justify-center">
+              <div className="flex justify-center">
                  {profileImage && (
                     <Image
                       src={profileImage.imageUrl}
                       alt={profileData.nome}
-                      width={400}
-                      height={400}
-                      className="rounded-xl shadow-2xl object-cover"
+                      width={500}
+                      height={500}
+                      className="rounded-2xl shadow-2xl object-cover aspect-square"
                        data-ai-hint={profileImage.imageHint}
                     />
                   )}
@@ -168,7 +151,7 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Meus Serviços</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-2">
+                <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-2 border-0 bg-card">
                    <CardHeader className="items-center">
                     <div className="p-4 bg-primary/10 rounded-full">
                       <service.icon className="h-8 w-8 text-primary" />
@@ -183,25 +166,9 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Links Section */}
-        <section id="links" className="py-16 md:py-24">
-          <div className="container mx-auto px-4 max-w-4xl">
-             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Outros Links</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {profileData.links.map((link, index) => {
-                const iconKey = link.icone.toLowerCase().replace('-', '');
-                const Icon = iconMap[iconKey];
-                return (
-                  <LinkCard key={index} href={link.url} icon={Icon} title={link.titulo} />
-                );
-              })}
-            </div>
-          </div>
-        </section>
       </main>
 
-      <footer className="pb-8 pt-4 bg-background border-t">
+      <footer className="pb-8 pt-12 bg-background border-t">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center text-center text-muted-foreground">
             <p className="font-semibold text-lg text-foreground mb-4">Entre em Contato</p>
