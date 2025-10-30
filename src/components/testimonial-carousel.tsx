@@ -68,15 +68,15 @@ export function TestimonialCarousel() {
           {testimonials.map((testimonial, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1 h-full">
-                <Card className="flex flex-col justify-between h-full shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 border-0 bg-card">
-                  <CardContent className="pt-6 text-center">
-                    <Quote className="h-8 w-8 text-primary/20 mb-4 mx-auto" />
-                    <p className="text-muted-foreground text-base italic leading-relaxed">
+                <Card className="flex flex-col justify-between shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 border-0 bg-card p-4">
+                  <CardContent className="p-0 text-center">
+                    <Quote className="h-6 w-6 text-primary/20 mb-2 mx-auto" />
+                    <p className="text-muted-foreground text-sm italic leading-relaxed">
                       "{testimonial.quote}"
                     </p>
                   </CardContent>
-                  <div className="p-6 pt-0 text-center">
-                     <p className="font-bold text-base mt-4">- {testimonial.author}</p>
+                  <div className="p-0 pt-2 text-center">
+                     <p className="font-bold text-sm mt-2">- {testimonial.author}</p>
                   </div>
                 </Card>
               </div>
