@@ -115,14 +115,14 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
               <p className="font-semibold text-primary">{profileData.atendimento}</p>
-              <h1 className="text-xl md:text-2xl lg:text-3xl font-extrabold tracking-tighter">
+              <h1 className="text-xl md:text-2xl font-extrabold tracking-tighter">
                 {profileData.headline}
               </h1>
               <p className="text-md text-foreground/80 max-w-2xl">
                 {profileData.frase}
               </p>
               
-              <div className="w-full max-w-md lg:max-w-lg pt-4">
+              <div className="w-full max-w-sm pt-4">
                 {profileImage && (
                   <Image
                     src={profileImage.imageUrl}
