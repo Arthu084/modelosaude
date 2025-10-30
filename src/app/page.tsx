@@ -154,43 +154,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" className="py-12 md:py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center mb-10">
-              <h2 className="text-xl md:text-2xl font-bold">
-                Sobre a Profissional
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start max-w-5xl mx-auto">
-              <div className="text-foreground/80 leading-relaxed text-left space-y-4">
-                <p>{profileData.sobre.texto}</p>
-              </div>
-              <div className="space-y-6">
-                <Card className="bg-primary/5 border-0">
-                  <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
-                    <GraduationCap className="w-6 h-6 text-primary" />
-                    <CardTitle className="text-lg text-primary font-semibold">Formação</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-foreground/80">{profileData.sobre.formacao}</p>
-                  </CardContent>
-                </Card>
-                <Card className="bg-primary/5 border-0">
-                  <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
-                    <HeartPulse className="w-6 h-6 text-primary" />
-                    <CardTitle className="text-lg text-primary font-semibold">Áreas de Atuação</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-sm text-foreground/80">{profileData.sobre.atuacao}</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-
         {/* Benefits Section */}
         <section id="benefits" className="py-12 bg-primary/5">
           <div className="container mx-auto px-4 max-w-4xl">
