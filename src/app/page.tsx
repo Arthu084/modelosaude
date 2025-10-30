@@ -107,7 +107,7 @@ export default function Home() {
         <section id="hero" className="py-8 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
-               <p className="font-semibold text-primary pt-2">{profileData.headline}</p>
+               <p className="font-semibold text-primary">{profileData.headline}</p>
               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
                 {profileData.frase}
               </h1>
