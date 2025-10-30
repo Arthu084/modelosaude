@@ -163,8 +163,8 @@ export default function Home() {
             <h2 className="text-xl font-bold text-center mb-4">Como posso te ajudar</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-0">
                 {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start p-3 rounded-lg">
-                      <CheckCircle2 className="h-6 w-6 text-primary mr-4 flex-shrink-0 mt-1" />
+                    <div key={index} className="flex items-center p-3 rounded-lg">
+                      <CheckCircle2 className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
                       <p className="text-md text-foreground/80">{benefit.text}</p>
                     </div>
                 ))}
