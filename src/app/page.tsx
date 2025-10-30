@@ -205,7 +205,7 @@ export default function Home() {
               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
                 {profileData.frase}
               </h1>
-              <p className="text-lg text-muted-foreground max-w-3xl">
+              <p className="text-base text-muted-foreground max-w-3xl">
                 Nossa equipe está preparada para oferecer um atendimento ágil, humano e com total privacidade.
               </p>
                <div className="w-full max-w-xs pt-2">
