@@ -106,10 +106,7 @@ export default function Home() {
         <section id="hero" className="py-8 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
-              <p className="font-semibold text-primary">{profileData.atendimento}</p>
-              <h1 className="text-xl md:text-2xl font-extrabold tracking-tighter">
-                {profileData.nome}
-              </h1>
+              <p className="font-semibold text-primary">{profileData.headline}</p>
               <p className="text-md text-foreground/80 max-w-2xl">
                 {profileData.especialidade} | {profileData.crm}
               </p>
