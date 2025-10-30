@@ -161,7 +161,7 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section id="hero" className="py-10 bg-primary/5">
+        <section id="hero" className="py-8 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
                <p className="font-semibold text-primary">{profileData.headline}</p>
@@ -199,12 +199,12 @@ export default function Home() {
         </section>
 
         {/* Benefits Section */}
-        <section id="benefits" className="py-10">
+        <section id="benefits" className="py-8">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-xl font-bold text-center mb-6">Como posso te ajudar</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
                 {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-center p-3 rounded-lg">
+                    <div key={index} className="flex items-center p-2 rounded-lg">
                       <CheckCircle2 className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
                       <p className="text-md text-foreground/80">{benefit.text}</p>
                     </div>
@@ -214,12 +214,12 @@ export default function Home() {
         </section>
 
         {/* Treatments Section */}
-        <section id="treatments" className="py-10 bg-primary/5">
+        <section id="treatments" className="py-8 bg-primary/5">
             <div className="container mx-auto px-4 max-w-4xl text-center">
                 <h2 className="text-xl font-bold mb-6">Tratamentos e Procedimentos</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-left">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1 text-left">
                     {treatmentItems.map((item, index) => (
-                        <div key={index} className="flex items-center p-3 rounded-lg">
+                        <div key={index} className="flex items-center p-2 rounded-lg">
                             <item.icon className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
                             <p className="text-md text-foreground/80">{item.text}</p>
                         </div>
@@ -232,10 +232,10 @@ export default function Home() {
         </section>
 
         {/* Professional Recognition Section */}
-        <section id="recognition" className="py-10">
+        <section id="recognition" className="py-8">
             <div className="container mx-auto px-4 max-w-4xl">
                 <h2 className="text-xl font-bold text-center mb-6">Reconhecimento Profissional</h2>
-                <div className="grid grid-cols-1 gap-y-4">
+                <div className="grid grid-cols-1 gap-y-2">
                     {recognitionItems.map((item, index) => (
                         <div key={index} className="flex items-center p-4 rounded-lg bg-card border shadow-sm">
                             <item.icon className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
@@ -247,7 +247,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-10 bg-primary/5">
+        <section id="testimonials" className="py-8 bg-primary/5">
             <div className="container mx-auto px-4 max-w-5xl">
                 <h2 className="text-xl font-bold text-center mb-6">O que minhas pacientes dizem</h2>
                 <TestimonialCarousel />
@@ -255,12 +255,12 @@ export default function Home() {
         </section>
 
         {/* Clinic Features Section */}
-        <section id="clinic-features" className="py-10">
+        <section id="clinic-features" className="py-8">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-xl font-bold text-center mb-6">Diferenciais da clínica</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1">
               {clinicFeatures.map((feature, index) => (
-                <div key={index} className="flex items-center p-3 rounded-lg">
+                <div key={index} className="flex items-center p-2 rounded-lg">
                   <feature.icon className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
                   <p className="text-md text-foreground/80">{feature.text}</p>
                 </div>
@@ -270,7 +270,7 @@ export default function Home() {
         </section>
         
         {/* Connect Section */}
-        <section id="connect" className="py-10 bg-muted/40">
+        <section id="connect" className="py-8 bg-muted/40">
             <div className="container mx-auto px-4 max-w-3xl text-center">
                 <h2 className="text-xl font-bold mb-6">Conecte-se Comigo</h2>
                 <div className="flex flex-col gap-4">
@@ -283,7 +283,7 @@ export default function Home() {
 
 
         {/* FAQ Section */}
-        <section id="faq" className="py-10">
+        <section id="faq" className="py-8">
             <div className="container mx-auto px-4 max-w-3xl text-center">
                 <h2 className="text-xl font-bold mb-6">Perguntas Frequentes</h2>
                 <Accordion type="single" collapsible className="w-full text-left">
@@ -313,7 +313,7 @@ export default function Home() {
         </section>
 
          {/* Location Section */}
-        <section id="location" className="py-10 bg-muted/50">
+        <section id="location" className="py-8 bg-muted/50">
             <div className="container mx-auto px-4 max-w-4xl text-center">
                 <h2 className="text-xl font-bold mb-6">Onde me encontrar</h2>
                 <p className="text-md text-muted-foreground mb-6">
