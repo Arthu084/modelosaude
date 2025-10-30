@@ -8,6 +8,7 @@ import {
   Sparkles,
   ParkingCircle,
   Wifi,
+  Users,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -54,6 +55,7 @@ const clinicFeatures = [
     { icon: Sparkles, text: "Equipamentos modernos para diagnósticos e tratamentos precisos." },
     { icon: Wifi, text: "Wi-Fi cortesia para pacientes e acompanhantes em nossa sala de espera." },
     { icon: ParkingCircle, text: "Localização privilegiada com estacionamento conveniado próximo." },
+    { icon: Users, text: "Equipe qualificada e atenciosa para um atendimento completo." }
 ]
 
 const faqItems = [
@@ -123,7 +125,7 @@ export default function Home() {
         <section id="hero" className="py-8 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
-               <p className="font-semibold text-primary">{profileData.headline}</p>
+               <p className="font-semibold text-primary pt-0">{profileData.headline}</p>
               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
                 {profileData.frase}
               </h1>
