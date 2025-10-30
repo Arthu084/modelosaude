@@ -107,6 +107,9 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
               <p className="font-semibold text-primary">{profileData.headline}</p>
+              <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">
+                {profileData.frase}
+              </h1>
               <p className="text-md text-foreground/80 max-w-2xl">
                 {profileData.especialidade} | {profileData.crm}
               </p>
