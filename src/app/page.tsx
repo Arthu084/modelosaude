@@ -90,7 +90,7 @@ export default function Home() {
           <Button
             asChild
             size="sm"
-            className="hidden sm:flex rounded-full shadow-md transition-transform transform hover:scale-105 bg-[#25D366] hover:bg-[#25D366]/90 text-white font-semibold"
+            className="hidden sm:flex rounded-md shadow-md transition-transform transform hover:scale-105"
           >
             <Link
               href={profileData.whatsapp}
@@ -109,12 +109,7 @@ export default function Home() {
         <section id="hero" className="py-8 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
-              <p className="font-semibold text-primary">{profileData.headline}</p>
-               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
-                {profileData.frase}
-              </h1>
-              
-              <div className="w-full max-w-xs pt-2">
+               <div className="w-full max-w-xs">
                 {profileImage && (
                   <Image
                     src={profileImage.imageUrl}
@@ -126,18 +121,21 @@ export default function Home() {
                   />
                 )}
               </div>
-              
+              <p className="font-semibold text-primary pt-2">{profileData.headline}</p>
+              <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
+                {profileData.frase}
+              </h1>
+
               <Button
                 asChild
                 size="lg"
-                className="mt-4 w-full max-w-sm text-lg font-bold py-6 rounded-full shadow-lg transition-transform transform hover:scale-105 bg-[#25D366] hover:bg-[#25D366]/90 text-white"
+                className="mt-4 w-full max-w-sm text-lg font-bold py-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
               >
                 <Link
                   href={profileData.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <WhatsAppIcon className="mr-3 h-6 w-6" />
                   AGENDAR MINHA CONSULTA
                 </Link>
               </Button>
@@ -146,10 +144,10 @@ export default function Home() {
         </section>
 
         {/* Benefits Section */}
-        <section id="benefits" className="pt-8 pb-8">
+        <section id="benefits" className="pt-8 pb-4">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-xl font-bold text-center mb-4">Como posso te ajudar</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-0">
                 {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start p-3 rounded-lg">
                       <CheckCircle2 className="h-6 w-6 text-primary mr-4 flex-shrink-0 mt-1" />
@@ -185,7 +183,7 @@ export default function Home() {
                 <Button
                   asChild
                   size="lg"
-                  className="mt-8 w-full max-w-md text-lg font-bold py-6 rounded-full shadow-lg transition-transform transform hover:scale-105 bg-[#25D366] hover:bg-[#25D366]/90 text-white"
+                  className="mt-8 w-full max-w-md text-lg font-bold py-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
                 >
                   <Link
                     href={profileData.whatsapp}
