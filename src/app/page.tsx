@@ -219,11 +219,11 @@ export default function Home() {
 
       <footer className="py-8 bg-muted border-t">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
-            <p className="font-semibold text-sm">{profileData.nome} – {profileData.especialidade}</p>
-            <p className="text-sm">{profileData.crm}</p>
             <p className="text-xs mt-4">Todos os direitos reservados. © {new Date().getFullYear()}</p>
         </div>
       </footer>
     </div>
   );
 }
+
+    
