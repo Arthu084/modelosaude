@@ -95,7 +95,7 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               <WhatsAppIcon className="mr-2 h-4 w-4" />
-              Agendar consulta
+              AGENDAR MINHA CONSULTA
             </Link>
           </Button>
         </div>
@@ -138,7 +138,7 @@ export default function Home() {
                   rel="noopener noreferrer"
                 >
                   <WhatsAppIcon className="mr-3 h-6 w-6" />
-                  Agende sua avaliação
+                  AGENDAR MINHA CONSULTA
                 </Link>
               </Button>
             </div>
@@ -223,7 +223,7 @@ export default function Home() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Agendar Consulta Agora
+                    AGENDAR MINHA CONSULTA
                   </Link>
                 </Button>
             </div>
