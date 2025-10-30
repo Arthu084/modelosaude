@@ -110,9 +110,6 @@ export default function Home() {
               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">
                 {profileData.frase}
               </h1>
-              <p className="text-md text-foreground/80 max-w-2xl">
-                {profileData.especialidade} | {profileData.crm}
-              </p>
               
               <div className="w-full max-w-sm pt-4">
                 {profileImage && (
@@ -126,6 +123,9 @@ export default function Home() {
                   />
                 )}
               </div>
+              <p className="text-md text-foreground/80 max-w-2xl pt-2">
+                {profileData.especialidade} | {profileData.crm}
+              </p>
 
               <Button
                 asChild
