@@ -114,13 +114,13 @@ export default function Home() {
                 {profileData.frase}
               </p>
               
-              <div className="w-full max-w-md lg:max-w-lg pt-4">
+              <div className="w-full max-w-sm pt-4">
                 {profileImage && (
                   <Image
                     src={profileImage.imageUrl}
                     alt={profileData.nome}
-                    width={500}
-                    height={500}
+                    width={400}
+                    height={400}
                     className="rounded-2xl shadow-xl object-cover aspect-square w-full"
                     data-ai-hint={profileImage.imageHint}
                   />
@@ -147,12 +147,12 @@ export default function Home() {
         </section>
 
         {/* Benefits Section */}
-        <section id="benefits" className="py-12 bg-primary/5">
+        <section id="benefits" className="pt-8 pb-12 bg-primary/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-xl font-bold text-center mb-8">Como posso te ajudar</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start">
+                    <div key={index} className="flex items-start p-4 rounded-lg hover:bg-card/50">
                       <CheckCircle2 className="h-6 w-6 text-primary mr-4 flex-shrink-0 mt-1" />
                       <p className="text-md text-foreground/80">{benefit.text}</p>
                     </div>
