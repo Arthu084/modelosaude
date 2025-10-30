@@ -287,19 +287,6 @@ export default function Home() {
         <section id="testimonials" className="py-8 bg-primary/5">
             <div className="container mx-auto px-4 max-w-5xl text-center">
                 <h2 className="text-xl font-bold text-center mb-6">O que minhas pacientes dizem</h2>
-                <Button
-                  asChild
-                  size="lg"
-                  className="mb-8 w-full max-w-xs font-bold py-6 text-xs rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
-                >
-                  <Link
-                    href={profileData.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    AGENDAR MINHA CONSULTA
-                  </Link>
-                </Button>
                 <TestimonialCarousel />
             </div>
         </section>
