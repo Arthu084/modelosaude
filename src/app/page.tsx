@@ -8,12 +8,13 @@ import {
   Video,
   CheckCircle2,
   Quote,
+  GraduationCap,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { WhatsAppIcon } from '@/components/icons/whatsapp-icon';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const profileData = {
   nome: 'Dra. Fernanda Costa',
@@ -114,10 +115,10 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
               <p className="font-semibold text-primary">{profileData.atendimento}</p>
-              <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tighter">
+              <h1 className="text-xl md:text-2xl lg:text-3xl font-extrabold tracking-tighter">
                 {profileData.headline}
               </h1>
-              <p className="text-md md:text-lg text-foreground/80 max-w-2xl">
+              <p className="text-md text-foreground/80 max-w-2xl">
                 {profileData.frase}
               </p>
               
@@ -154,27 +155,46 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="py-12">
-            <div className="container mx-auto px-4 max-w-4xl text-center">
-                <h2 className="text-2xl font-bold mb-4">Sobre a Profissional</h2>
-                <p className="text-md text-foreground/80 leading-relaxed mb-6">{profileData.sobre.texto}</p>
-                <div className="grid md:grid-cols-2 gap-6 text-left">
-                  <div className="bg-primary/5 p-4 rounded-lg">
-                    <h3 className="font-bold text-lg mb-2 text-primary flex items-center"><HeartPulse className="mr-2 h-5 w-5"/> Formação</h3>
-                    <p className="text-sm text-foreground/80">{profileData.sobre.formacao}</p>
-                  </div>
-                   <div className="bg-primary/5 p-4 rounded-lg">
-                    <h3 className="font-bold text-lg mb-2 text-primary flex items-center"><HeartPulse className="mr-2 h-5 w-5"/> Atuação</h3>
-                    <p className="text-sm text-foreground/80">{profileData.sobre.atuacao}</p>
-                  </div>
-                </div>
+        <section id="about" className="py-12 md:py-20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto text-center mb-10">
+              <h2 className="text-xl md:text-2xl font-bold">
+                Sobre a Profissional
+              </h2>
             </div>
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start max-w-5xl mx-auto">
+              <div className="text-foreground/80 leading-relaxed text-left space-y-4">
+                <p>{profileData.sobre.texto}</p>
+              </div>
+              <div className="space-y-6">
+                <Card className="bg-primary/5 border-0">
+                  <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
+                    <GraduationCap className="w-6 h-6 text-primary" />
+                    <CardTitle className="text-lg text-primary font-semibold">Formação</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-foreground/80">{profileData.sobre.formacao}</p>
+                  </CardContent>
+                </Card>
+                <Card className="bg-primary/5 border-0">
+                  <CardHeader className="flex flex-row items-center gap-4 space-y-0 pb-2">
+                    <HeartPulse className="w-6 h-6 text-primary" />
+                    <CardTitle className="text-lg text-primary font-semibold">Áreas de Atuação</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-sm text-foreground/80">{profileData.sobre.atuacao}</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
         </section>
+
 
         {/* Benefits Section */}
         <section id="benefits" className="py-12 bg-primary/5">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-2xl font-bold text-center mb-6">Como posso te ajudar</h2>
+            <h2 className="text-xl md:text-2xl font-bold text-center mb-6">Como posso te ajudar</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
                 {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start">
@@ -189,7 +209,7 @@ export default function Home() {
         {/* Testimonials Section */}
         <section id="testimonials" className="py-12">
             <div className="container mx-auto px-4 max-w-5xl">
-                <h2 className="text-2xl font-bold text-center mb-6">Depoimentos de Pacientes</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-center mb-6">Depoimentos de Pacientes</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                 {testimonials.map((testimonial, index) => (
                     <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 border-0 bg-card">
@@ -207,7 +227,7 @@ export default function Home() {
         {/* CTA Section */}
         <section id="contact" className="py-12 bg-primary/5">
             <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-2xl font-bold mb-3">Agende sua Consulta</h2>
+                <h2 className="text-xl md:text-2xl font-bold mb-3">Agende sua Consulta</h2>
                 <p className="text-md text-foreground/80 mb-6">Escolha a melhor forma de entrar em contato. Clique no botão abaixo e fale diretamente comigo ou com minha equipe para agendar sua consulta.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-left">
                   <Link href={profileData.whatsapp} target='_blank' rel="noopener noreferrer" className="bg-card p-4 rounded-lg flex items-center hover:bg-muted transition-colors">
@@ -258,7 +278,7 @@ export default function Home() {
          {/* Location Section */}
         <section id="location" className="py-12">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <h2 className="text-2xl font-bold mb-3">Localização</h2>
+                <h2 className="text-xl md:text-2xl font-bold mb-3">Localização</h2>
                 <p className="text-md text-muted-foreground mb-6">
                     📍 {profileData.endereco.nomeClinica} - {profileData.endereco.rua}, {profileData.endereco.cidade}
                 </p>
