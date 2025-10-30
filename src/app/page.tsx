@@ -2,19 +2,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import {
-  HeartPulse,
   MapPin,
   Phone,
   Video,
   CheckCircle2,
   Quote,
-  GraduationCap,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { WhatsAppIcon } from '@/components/icons/whatsapp-icon';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 
 const profileData = {
   nome: 'Dra. Fernanda Costa',
@@ -33,12 +31,6 @@ const profileData = {
     nomeClinica: 'Clínica Dermacare',
   },
   atendimentoOnline: 'https://www.doctoralia.com.br/',
-  sobre: {
-    texto:
-      'Olá, sou a Dra. Fernanda Costa, especialista em dermatologia, com mais de 10 anos de experiência ajudando pacientes a terem uma pele mais saudável e radiante. Minha missão é oferecer um atendimento humanizado, com base em tecnologia, empatia e diagnóstico preciso, para que você se sinta seguro(a) e bem cuidado(a) em cada etapa do tratamento.',
-    formacao: 'Medicina pela USP, Especialização em Dermatologia pelo Hospital das Clínicas',
-    atuacao: 'Tratamentos clínicos, procedimentos estéticos e cosmiatria',
-  },
 };
 
 const benefits = [
@@ -127,8 +119,8 @@ export default function Home() {
                   <Image
                     src={profileImage.imageUrl}
                     alt={profileData.nome}
-                    width={500}
-                    height={500}
+                    width={400}
+                    height={400}
                     className="rounded-2xl shadow-xl object-cover aspect-square w-full"
                     data-ai-hint={profileImage.imageHint}
                   />
@@ -157,13 +149,15 @@ export default function Home() {
         {/* Benefits Section */}
         <section id="benefits" className="py-12 bg-primary/5">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-xl md:text-2xl font-bold text-center mb-6">Como posso te ajudar</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+            <h2 className="text-xl font-bold text-center mb-6">Como posso te ajudar</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
-                        <p className="text-md text-foreground/80">{benefit.text}</p>
-                    </div>
+                    <Card key={index} className="bg-card/80 border-0 shadow-sm hover:shadow-md transition-shadow">
+                      <CardContent className="p-4 flex items-center">
+                        <CheckCircle2 className="h-5 w-5 text-primary mr-4 flex-shrink-0" />
+                        <p className="text-sm text-foreground/80">{benefit.text}</p>
+                      </CardContent>
+                    </Card>
                 ))}
             </div>
           </div>
@@ -172,7 +166,7 @@ export default function Home() {
         {/* Testimonials Section */}
         <section id="testimonials" className="py-12">
             <div className="container mx-auto px-4 max-w-5xl">
-                <h2 className="text-xl md:text-2xl font-bold text-center mb-6">Depoimentos de Pacientes</h2>
+                <h2 className="text-xl font-bold text-center mb-6">Depoimentos de Pacientes</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                 {testimonials.map((testimonial, index) => (
                     <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 border-0 bg-card">
@@ -190,7 +184,7 @@ export default function Home() {
         {/* CTA Section */}
         <section id="contact" className="py-12 bg-primary/5">
             <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-xl md:text-2xl font-bold mb-3">Agende sua Consulta</h2>
+                <h2 className="text-xl font-bold mb-3">Agende sua Consulta</h2>
                 <p className="text-md text-foreground/80 mb-6">Escolha a melhor forma de entrar em contato. Clique no botão abaixo e fale diretamente comigo ou com minha equipe para agendar sua consulta.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-left">
                   <Link href={profileData.whatsapp} target='_blank' rel="noopener noreferrer" className="bg-card p-4 rounded-lg flex items-center hover:bg-muted transition-colors">
@@ -241,7 +235,7 @@ export default function Home() {
          {/* Location Section */}
         <section id="location" className="py-12">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <h2 className="text-xl md:text-2xl font-bold mb-3">Localização</h2>
+                <h2 className="text-xl font-bold mb-3">Localização</h2>
                 <p className="text-md text-muted-foreground mb-6">
                     📍 {profileData.endereco.nomeClinica} - {profileData.endereco.rua}, {profileData.endereco.cidade}
                 </p>
