@@ -111,7 +111,7 @@ export default function Home() {
                 {profileData.frase}
               </h1>
               
-              <div className="w-full max-w-sm pt-4">
+              <div className="w-full max-w-sm pt-2">
                 {profileImage && (
                   <Image
                     src={profileImage.imageUrl}
@@ -144,9 +144,9 @@ export default function Home() {
         </section>
 
         {/* Benefits Section */}
-        <section id="benefits" className="pt-2 pb-12 bg-primary/5">
+        <section id="benefits" className="pt-8 pb-8 bg-primary/5">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-xl font-bold text-center mb-8">Como posso te ajudar</h2>
+            <h2 className="text-xl font-bold text-center mb-6">Como posso te ajudar</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start p-3 rounded-lg hover:bg-card/50">
@@ -159,7 +159,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-12">
+        <section id="testimonials" className="py-8">
             <div className="container mx-auto px-4 max-w-5xl">
                 <h2 className="text-xl font-bold text-center mb-6">Depoimentos de Pacientes</h2>
                 <div className="grid md:grid-cols-3 gap-6">
@@ -177,9 +177,9 @@ export default function Home() {
         </section>
 
         {/* CTA Section */}
-        <section id="contact" className="py-12 bg-primary/5">
+        <section id="contact" className="py-8 bg-primary/5">
             <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-xl font-bold mb-3">Agende sua Consulta</h2>
+                <h2 className="text-xl font-bold mb-4">Agende sua Consulta</h2>
                 <p className="text-md text-foreground/80 mb-6">Escolha a melhor forma de entrar em contato. Clique no botão abaixo e fale diretamente comigo ou com minha equipe para agendar sua consulta.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-left">
                   <Link href={profileData.whatsapp} target='_blank' rel="noopener noreferrer" className="bg-card p-4 rounded-lg flex items-center hover:bg-muted transition-colors">
@@ -228,9 +228,9 @@ export default function Home() {
         </section>
 
          {/* Location Section */}
-        <section id="location" className="py-12">
+        <section id="location" className="py-8">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <h2 className="text-xl font-bold mb-3">Localização</h2>
+                <h2 className="text-xl font-bold mb-4">Localização</h2>
                 <p className="text-md text-muted-foreground mb-6">
                     📍 {profileData.endereco.nomeClinica} - {profileData.endereco.rua}, {profileData.endereco.cidade}
                 </p>
