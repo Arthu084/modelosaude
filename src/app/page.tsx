@@ -20,7 +20,7 @@ const profileData = {
   crm: 'CRM-SP 98765',
   atendimento: 'Atendimento presencial e online',
   frase: 'Cuidando da sua saúde com atenção, empatia e ciência.',
-  headline: 'Cuidando da sua saúde com atenção, empatia e ciência.',
+  headline: 'Dermatologia Clínica e Estética',
   fotoPerfilId: 'doctor-profile',
   whatsapp: 'https://wa.me/5511999999999',
   telefone: 'tel:+5511999999999',
@@ -108,10 +108,10 @@ export default function Home() {
             <div className="flex flex-col items-center text-center space-y-4">
               <p className="font-semibold text-primary">{profileData.atendimento}</p>
               <h1 className="text-xl md:text-2xl font-extrabold tracking-tighter">
-                {profileData.headline}
+                {profileData.nome}
               </h1>
               <p className="text-md text-foreground/80 max-w-2xl">
-                {profileData.frase}
+                {profileData.especialidade} | {profileData.crm}
               </p>
               
               <div className="w-full max-w-sm pt-4">
@@ -141,7 +141,6 @@ export default function Home() {
                   Agende sua avaliação
                 </Link>
               </Button>
-              <p className="text-sm text-muted-foreground pt-1">{profileData.especialidade} | {profileData.crm}</p>
             </div>
           </div>
         </section>
