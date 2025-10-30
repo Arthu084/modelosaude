@@ -164,7 +164,7 @@ export default function Home() {
         <section id="hero" className="py-8 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
-               <p className="font-semibold text-primary">{profileData.headline}</p>
+               <p className="font-semibold text-primary pt-2">{profileData.headline}</p>
               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
                 {profileData.frase}
               </h1>
@@ -269,19 +269,6 @@ export default function Home() {
           </div>
         </section>
         
-        {/* Connect Section */}
-        <section id="connect" className="py-8 bg-muted/40">
-            <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-xl font-bold mb-6">Conecte-se Comigo</h2>
-                <div className="flex flex-col gap-4">
-                    {socialLinks.map((link) => (
-                        <LinkCard key={link.href} {...link} />
-                    ))}
-                </div>
-            </div>
-        </section>
-
-
         {/* FAQ Section */}
         <section id="faq" className="py-8">
             <div className="container mx-auto px-4 max-w-3xl text-center">
@@ -309,6 +296,18 @@ export default function Home() {
                     AGENDAR MINHA CONSULTA
                   </Link>
                 </Button>
+            </div>
+        </section>
+
+        {/* Connect Section */}
+        <section id="connect" className="py-8 bg-muted/40">
+            <div className="container mx-auto px-4 max-w-3xl text-center">
+                <h2 className="text-xl font-bold mb-6">Conecte-se Comigo</h2>
+                <div className="flex flex-col gap-4">
+                    {socialLinks.map((link) => (
+                        <LinkCard key={link.href} {...link} />
+                    ))}
+                </div>
             </div>
         </section>
 
