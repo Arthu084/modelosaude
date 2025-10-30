@@ -3,22 +3,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import {
   MapPin,
-  Phone,
-  Video,
   CheckCircle2,
-  Quote,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { WhatsAppIcon } from '@/components/icons/whatsapp-icon';
-import { Card, CardContent } from '@/components/ui/card';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { TestimonialCarousel } from '@/components/testimonial-carousel';
 
 const profileData = {
   nome: 'Dra. Fernanda Costa',
@@ -45,21 +42,6 @@ const benefits = [
   { text: 'Atendimento humanizado, sem pressa' },
   { text: 'Suporte via WhatsApp para dúvidas entre consultas' },
   { text: 'Opção de atendimento online (telemedicina)' },
-];
-
-const testimonials = [
-    {
-        quote: "A Dra. Fernanda me explicou tudo com paciência e clareza. Saí da consulta tranquila e confiante!",
-        author: "Maria S."
-    },
-    {
-        quote: "Um atendimento impecável do início ao fim. Recomendo de olhos fechados.",
-        author: "André P."
-    },
-    {
-        quote: "Finalmente encontrei uma profissional que realmente se importa. Resultados incríveis!",
-        author: "Joana L."
-    }
 ];
 
 const faqItems = [
@@ -126,9 +108,9 @@ export default function Home() {
         {/* Hero Section */}
         <section id="hero" className="py-8 bg-primary/5">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col items-center text-center space-y-2">
+            <div className="flex flex-col items-center text-center space-y-3">
               <p className="font-semibold text-primary">{profileData.headline}</p>
-               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">
+               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
                 {profileData.frase}
               </h1>
               
@@ -137,9 +119,9 @@ export default function Home() {
                   <Image
                     src={profileImage.imageUrl}
                     alt={profileData.nome}
-                    width={400}
-                    height={400}
-                    className="rounded-2xl shadow-xl object-cover aspect-square w-full"
+                    width={320}
+                    height={320}
+                    className="rounded-2xl shadow-xl object-cover aspect-square w-full mx-auto"
                     data-ai-hint={profileImage.imageHint}
                   />
                 )}
@@ -164,10 +146,10 @@ export default function Home() {
         </section>
 
         {/* Benefits Section */}
-        <section id="benefits" className="pt-8 pb-8">
+        <section id="benefits" className="pt-4 pb-8">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-xl font-bold text-center mb-6">Como posso te ajudar</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <h2 className="text-xl font-bold text-center mb-4">Como posso te ajudar</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-0">
                 {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start p-3 rounded-lg">
                       <CheckCircle2 className="h-6 w-6 text-primary mr-4 flex-shrink-0 mt-1" />
@@ -179,25 +161,15 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-8 bg-primary/5">
+        <section id="testimonials" className="py-12 bg-primary/5">
             <div className="container mx-auto px-4 max-w-5xl">
-                <h2 className="text-xl font-bold text-center mb-6">Depoimentos de Pacientes</h2>
-                <div className="grid md:grid-cols-3 gap-6">
-                {testimonials.map((testimonial, index) => (
-                    <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 border-0 bg-card">
-                        <CardContent className="pt-6">
-                            <Quote className="h-6 w-6 text-primary/20 mb-3 mx-auto" />
-                            <p className="text-muted-foreground text-sm italic">"{testimonial.quote}"</p>
-                            <p className="font-bold text-sm mt-3">- {testimonial.author}</p>
-                        </CardContent>
-                    </Card>
-                ))}
-                </div>
+                <h2 className="text-xl font-bold text-center mb-8">O que minhas pacientes dizem</h2>
+                <TestimonialCarousel />
             </div>
         </section>
 
         {/* FAQ Section */}
-        <section id="faq" className="py-8">
+        <section id="faq" className="py-12">
             <div className="container mx-auto px-4 max-w-3xl text-center">
                 <h2 className="text-xl font-bold mb-6">Perguntas Frequentes</h2>
                 <Accordion type="single" collapsible className="w-full text-left">
@@ -227,10 +199,11 @@ export default function Home() {
         </section>
 
          {/* Location Section */}
-        <section id="location" className="py-8 bg-muted/50">
+        <section id="location" className="py-12 bg-muted/50">
             <div className="container mx-auto px-4 max-w-4xl text-center">
                 <h2 className="text-xl font-bold mb-4">Onde me encontrar</h2>
                 <p className="text-md text-muted-foreground mb-6">
+                    <MapPin className="inline-block h-5 w-5 mr-2 text-primary" />
                     {profileData.endereco.nomeClinica} - {profileData.endereco.rua}, {profileData.endereco.cidade}
                 </p>
                 <div className="aspect-video rounded-lg overflow-hidden border shadow-md">
