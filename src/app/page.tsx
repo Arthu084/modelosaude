@@ -114,7 +114,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
               <p className="font-semibold text-primary">{profileData.atendimento}</p>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tighter">
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold tracking-tighter">
                 {profileData.headline}
               </h1>
               <p className="text-md md:text-lg text-foreground/80 max-w-2xl">
@@ -156,7 +156,7 @@ export default function Home() {
         {/* About Section */}
         <section id="about" className="py-12">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <h2 className="text-3xl font-bold mb-4">Sobre a Profissional</h2>
+                <h2 className="text-2xl font-bold mb-4">Sobre a Profissional</h2>
                 <p className="text-md text-foreground/80 leading-relaxed mb-6">{profileData.sobre.texto}</p>
                 <div className="grid md:grid-cols-2 gap-6 text-left">
                   <div className="bg-primary/5 p-4 rounded-lg">
@@ -174,7 +174,7 @@ export default function Home() {
         {/* Benefits Section */}
         <section id="benefits" className="py-12 bg-primary/5">
           <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-3xl font-bold text-center mb-6">Como posso te ajudar</h2>
+            <h2 className="text-2xl font-bold text-center mb-6">Como posso te ajudar</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
                 {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start">
@@ -189,7 +189,7 @@ export default function Home() {
         {/* Testimonials Section */}
         <section id="testimonials" className="py-12">
             <div className="container mx-auto px-4 max-w-5xl">
-                <h2 className="text-3xl font-bold text-center mb-6">Depoimentos de Pacientes</h2>
+                <h2 className="text-2xl font-bold text-center mb-6">Depoimentos de Pacientes</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                 {testimonials.map((testimonial, index) => (
                     <Card key={index} className="text-center shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 border-0 bg-card">
@@ -207,7 +207,7 @@ export default function Home() {
         {/* CTA Section */}
         <section id="contact" className="py-12 bg-primary/5">
             <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-3xl font-bold mb-3">Agende sua Consulta</h2>
+                <h2 className="text-2xl font-bold mb-3">Agende sua Consulta</h2>
                 <p className="text-md text-foreground/80 mb-6">Escolha a melhor forma de entrar em contato. Clique no botão abaixo e fale diretamente comigo ou com minha equipe para agendar sua consulta.</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-left">
                   <Link href={profileData.whatsapp} target='_blank' rel="noopener noreferrer" className="bg-card p-4 rounded-lg flex items-center hover:bg-muted transition-colors">
@@ -258,7 +258,7 @@ export default function Home() {
          {/* Location Section */}
         <section id="location" className="py-12">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <h2 className="text-3xl font-bold mb-3">Localização</h2>
+                <h2 className="text-2xl font-bold mb-3">Localização</h2>
                 <p className="text-md text-muted-foreground mb-6">
                     📍 {profileData.endereco.nomeClinica} - {profileData.endereco.rua}, {profileData.endereco.cidade}
                 </p>
@@ -287,5 +287,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
