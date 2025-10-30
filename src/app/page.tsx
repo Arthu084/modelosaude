@@ -4,6 +4,10 @@ import Link from 'next/link';
 import {
   MapPin,
   CheckCircle2,
+  Coffee,
+  Sparkles,
+  ParkingCircle,
+  Wifi,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -44,6 +48,13 @@ const benefits = [
   { text: 'Suporte via WhatsApp para dúvidas entre consultas' },
   { text: 'Opção de atendimento online (telemedicina)' },
 ];
+
+const clinicFeatures = [
+    { icon: Coffee, text: "Ambiente climatizado e confortável com café e água à disposição." },
+    { icon: Sparkles, text: "Equipamentos modernos para diagnósticos e tratamentos precisos." },
+    { icon: Wifi, text: "Wi-Fi cortesia para pacientes e acompanhantes em nossa sala de espera." },
+    { icon: ParkingCircle, text: "Localização privilegiada com estacionamento conveniado próximo." },
+]
 
 const faqItems = [
     {
@@ -169,8 +180,23 @@ export default function Home() {
             </div>
         </section>
 
+        {/* Clinic Features Section */}
+        <section id="clinic-features" className="py-8">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-xl font-bold text-center mb-6">Diferenciais da clínica</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
+              {clinicFeatures.map((feature, index) => (
+                <div key={index} className="flex items-center p-3 rounded-lg">
+                  <feature.icon className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
+                  <p className="text-md text-foreground/80">{feature.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* FAQ Section */}
-        <section id="faq" className="py-8">
+        <section id="faq" className="py-8 bg-muted/40">
             <div className="container mx-auto px-4 max-w-3xl text-center">
                 <h2 className="text-xl font-bold mb-6">Perguntas Frequentes</h2>
                 <Accordion type="single" collapsible className="w-full text-left">
