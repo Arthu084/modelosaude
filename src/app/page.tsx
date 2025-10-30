@@ -109,7 +109,7 @@ export default function Home() {
 
       <main className="flex-grow">
         {/* Hero Section */}
-        <section id="hero" className="py-20 md:py-32 bg-primary/5">
+        <section id="hero" className="py-12 md:py-20 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
