@@ -163,7 +163,7 @@ export default function Home() {
         {/* Testimonials Section */}
         <section id="testimonials" className="py-8 bg-primary/5">
             <div className="container mx-auto px-4 max-w-5xl">
-                <h2 className="text-xl font-bold text-center mb-8">O que minhas pacientes dizem</h2>
+                <h2 className="text-xl font-bold text-center mb-4">O que minhas pacientes dizem</h2>
                 <TestimonialCarousel />
             </div>
         </section>
