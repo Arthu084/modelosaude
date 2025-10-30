@@ -208,13 +208,13 @@ export default function Home() {
               <p className="text-sm text-muted-foreground max-w-3xl">
                 Nossa equipe está preparada para oferecer um atendimento ágil, humano e com total privacidade.
               </p>
-               <div className="w-full max-w-xs pt-2">
+               <div className="w-full max-w-sm pt-2">
                 {heroImage && (
                   <Image
                     src={heroImage.imageUrl}
                     alt={profileData.nome}
-                    width={320}
-                    height={320}
+                    width={384}
+                    height={384}
                     className="rounded-2xl shadow-xl object-cover aspect-square w-full mx-auto"
                     data-ai-hint={heroImage.imageHint}
                   />
@@ -224,7 +224,7 @@ export default function Home() {
               <Button
                 asChild
                 size="lg"
-                className="w-full max-w-xs font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
+                className="w-full max-w-sm font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
               >
                 <Link
                   href={profileData.whatsapp}
