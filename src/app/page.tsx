@@ -15,7 +15,8 @@ import {
   Stethoscope,
   Instagram,
   Youtube,
-  Linkedin
+  Linkedin,
+  Menu,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -29,6 +30,12 @@ import {
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
 import { WhatsAppIcon } from '@/components/icons/whatsapp-icon';
 import { LinkCard } from '@/components/link-card';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const profileData = {
   nome: 'Dra. Fernanda Costa',
@@ -112,6 +119,17 @@ const faqItems = [
     }
 ]
 
+const menuLinks = [
+  { href: "#benefits", label: "Como posso te ajudar" },
+  { href: "#treatments", label: "Tratamentos" },
+  { href: "#recognition", label: "Reconhecimento" },
+  { href: "#testimonials", label: "Depoimentos" },
+  { href: "#clinic-features", label: "Diferenciais da Clínica" },
+  { href: "#faq", label: "Perguntas Frequentes" },
+  { href: "#connect", label: "Conecte-se Comigo" },
+  { href: "#location", label: "Onde me encontrar" },
+];
+
 
 export default function Home() {
   const profileImage = PlaceHolderImages.find(
@@ -143,19 +161,38 @@ export default function Home() {
               <p className="text-xs text-muted-foreground">{profileData.especialidade} | {profileData.crm}</p>
             </div>
           </div>
-          <Button
-            asChild
-            size="sm"
-            className="hidden sm:flex rounded-md shadow-md transition-transform transform hover:scale-105 text-xs"
-          >
-            <Link
-              href={profileData.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              AGENDAR MINHA CONSULTA
-            </Link>
-          </Button>
+          <div className="hidden sm:flex">
+             <Button
+                asChild
+                size="sm"
+                className="rounded-md shadow-md transition-transform transform hover:scale-105 text-xs"
+              >
+                <Link
+                  href={profileData.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  AGENDAR MINHA CONSULTA
+                </Link>
+              </Button>
+          </div>
+          <div className="sm:hidden">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Abrir menu</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {menuLinks.map((link) => (
+                  <DropdownMenuItem key={link.href} asChild>
+                    <Link href={link.href}>{link.label}</Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+          </div>
         </div>
       </header>
 
