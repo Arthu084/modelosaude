@@ -13,6 +13,12 @@ import { Button } from '@/components/ui/button';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { WhatsAppIcon } from '@/components/icons/whatsapp-icon';
 import { Card, CardContent } from '@/components/ui/card';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 const profileData = {
   nome: 'Dra. Fernanda Costa',
@@ -55,6 +61,21 @@ const testimonials = [
         author: "Joana L."
     }
 ];
+
+const faqItems = [
+    {
+        question: "Quais convênios vocês aceitam?",
+        answer: "No momento, atendo apenas consultas particulares para oferecer um atendimento mais completo e individualizado. Você pode solicitar um recibo para pedir reembolso ao seu plano de saúde, se aplicável."
+    },
+    {
+        question: "Como funciona a primeira consulta?",
+        answer: "Na primeira consulta, faremos uma avaliação completa da sua pele, histórico de saúde e rotina. Conversaremos sobre suas queixas e objetivos para, juntos, definirmos o melhor plano de tratamento para você."
+    },
+    {
+        question: "Quais são as formas de pagamento?",
+        answer: "Aceitamos pagamentos via Pix, transferência bancária e cartões de crédito. O pagamento pode ser feito no dia da consulta."
+    }
+]
 
 
 export default function Home() {
@@ -105,13 +126,13 @@ export default function Home() {
         {/* Hero Section */}
         <section id="hero" className="py-8 bg-primary/5">
           <div className="container mx-auto px-4">
-            <div className="flex flex-col items-center text-center space-y-4">
+            <div className="flex flex-col items-center text-center space-y-2">
               <p className="font-semibold text-primary">{profileData.headline}</p>
-              <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">
+               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl">
                 {profileData.frase}
               </h1>
               
-              <div className="w-full max-w-sm pt-2">
+              <div className="w-full max-w-xs pt-2">
                 {profileImage && (
                   <Image
                     src={profileImage.imageUrl}
@@ -124,7 +145,6 @@ export default function Home() {
                 )}
               </div>
               
-
               <Button
                 asChild
                 size="lg"
@@ -144,12 +164,12 @@ export default function Home() {
         </section>
 
         {/* Benefits Section */}
-        <section id="benefits" className="pt-8 pb-8 bg-primary/5">
+        <section id="benefits" className="pt-8 pb-8">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-xl font-bold text-center mb-6">Como posso te ajudar</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                 {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-start p-3 rounded-lg hover:bg-card/50">
+                    <div key={index} className="flex items-start p-3 rounded-lg">
                       <CheckCircle2 className="h-6 w-6 text-primary mr-4 flex-shrink-0 mt-1" />
                       <p className="text-md text-foreground/80">{benefit.text}</p>
                     </div>
@@ -159,7 +179,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-8">
+        <section id="testimonials" className="py-8 bg-primary/5">
             <div className="container mx-auto px-4 max-w-5xl">
                 <h2 className="text-xl font-bold text-center mb-6">Depoimentos de Pacientes</h2>
                 <div className="grid md:grid-cols-3 gap-6">
@@ -176,45 +196,24 @@ export default function Home() {
             </div>
         </section>
 
-        {/* CTA Section */}
-        <section id="contact" className="py-8 bg-primary/5">
+        {/* FAQ Section */}
+        <section id="faq" className="py-8">
             <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-xl font-bold mb-4">Agende sua Consulta</h2>
-                <p className="text-md text-foreground/80 mb-6">Escolha a melhor forma de entrar em contato. Clique no botão abaixo e fale diretamente comigo ou com minha equipe para agendar sua consulta.</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 text-left">
-                  <Link href={profileData.whatsapp} target='_blank' rel="noopener noreferrer" className="bg-card p-4 rounded-lg flex items-center hover:bg-muted transition-colors">
-                    <WhatsAppIcon className="h-6 w-6 text-green-500 mr-3"/>
-                    <div>
-                      <h4 className="font-bold text-sm">WhatsApp</h4>
-                      <p className="text-xs text-muted-foreground">Agendamento rápido</p>
-                    </div>
-                  </Link>
-                   <Link href={profileData.telefone} className="bg-card p-4 rounded-lg flex items-center hover:bg-muted transition-colors">
-                    <Phone className="h-6 w-6 text-primary mr-3"/>
-                    <div>
-                      <h4 className="font-bold text-sm">Telefone</h4>
-                      <p className="text-xs text-muted-foreground">Fale com a recepção</p>
-                    </div>
-                  </Link>
-                  <Link href={profileData.endereco.linkMapa} target='_blank' rel="noopener noreferrer" className="bg-card p-4 rounded-lg flex items-center hover:bg-muted transition-colors">
-                    <MapPin className="h-6 w-6 text-primary mr-3"/>
-                    <div>
-                      <h4 className="font-bold text-sm">Endereço</h4>
-                      <p className="text-xs text-muted-foreground">{profileData.endereco.rua}</p>
-                    </div>
-                  </Link>
-                  <Link href={profileData.atendimentoOnline} target='_blank' rel="noopener noreferrer" className="bg-card p-4 rounded-lg flex items-center hover:bg-muted transition-colors">
-                    <Video className="h-6 w-6 text-primary mr-3"/>
-                    <div>
-                      <h4 className="font-bold text-sm">Atendimento Online</h4>
-                      <p className="text-xs text-muted-foreground">Consulte de onde estiver</p>
-                    </div>
-                  </Link>
-                </div>
-                 <Button
+                <h2 className="text-xl font-bold mb-6">Perguntas Frequentes</h2>
+                <Accordion type="single" collapsible className="w-full text-left">
+                    {faqItems.map((item, index) => (
+                         <AccordionItem value={`item-${index}`} key={index}>
+                            <AccordionTrigger className="font-semibold text-md hover:no-underline">{item.question}</AccordionTrigger>
+                            <AccordionContent className="text-md text-foreground/80">
+                                {item.answer}
+                            </AccordionContent>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
+                <Button
                   asChild
                   size="lg"
-                  className="w-full max-w-md text-lg font-bold py-6 rounded-full shadow-lg transition-transform transform hover:scale-105 bg-[#25D366] hover:bg-[#25D366]/90 text-white"
+                  className="mt-8 w-full max-w-md text-lg font-bold py-6 rounded-full shadow-lg transition-transform transform hover:scale-105 bg-[#25D366] hover:bg-[#25D366]/90 text-white"
                 >
                   <Link
                     href={profileData.whatsapp}
@@ -228,11 +227,11 @@ export default function Home() {
         </section>
 
          {/* Location Section */}
-        <section id="location" className="py-8">
+        <section id="location" className="py-8 bg-muted/50">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <h2 className="text-xl font-bold mb-4">Localização</h2>
+                <h2 className="text-xl font-bold mb-4">Onde me encontrar</h2>
                 <p className="text-md text-muted-foreground mb-6">
-                    📍 {profileData.endereco.nomeClinica} - {profileData.endereco.rua}, {profileData.endereco.cidade}
+                    {profileData.endereco.nomeClinica} - {profileData.endereco.rua}, {profileData.endereco.cidade}
                 </p>
                 <div className="aspect-video rounded-lg overflow-hidden border shadow-md">
                     <iframe 
@@ -249,11 +248,11 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="py-8 bg-muted/50 border-t">
+      <footer className="py-8 bg-muted border-t">
         <div className="container mx-auto px-4 text-center text-muted-foreground">
             <p className="font-semibold text-sm">{profileData.nome} – {profileData.especialidade}</p>
             <p className="text-sm">{profileData.crm}</p>
-            <p className="text-xs mt-4">Todos os atendimentos seguem as normas do CFM.</p>
+            <p className="text-xs mt-4">Todos os direitos reservados. © {new Date().getFullYear()}</p>
         </div>
       </footer>
     </div>
