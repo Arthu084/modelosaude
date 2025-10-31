@@ -393,7 +393,7 @@ export default function Home() {
                         </div>
                     </div>
                     <div className="flex flex-col justify-center mt-1">
-                        <p className="text-muted-foreground text-sm">
+                        <p className="text-muted-foreground text-xs">
                             "Excelente profissional! Me senti muito à vontade durante a consulta e o tratamento superou minhas expectativas. Recomendo muito a Dra. Fernanda."
                         </p>
                     </div>
@@ -413,3 +413,4 @@ export default function Home() {
   );
 }
 
+    
