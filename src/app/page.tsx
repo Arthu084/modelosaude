@@ -11,6 +11,7 @@ import {
   Heart,
   Smile,
   Clock,
+  Sparkles,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -67,6 +68,7 @@ const clinicFeatures = [
     { icon: Heart, text: 'Atendimento humanizado e individualizado' },
     { icon: Smile, text: 'Ambiente acolhedor e confortável' },
     { icon: Clock, text: 'Pontualidade e respeito ao seu tempo' },
+    { icon: Sparkles, text: 'Tecnologia de ponta nos tratamentos' },
 ];
 
 const faqItems = [
@@ -277,6 +279,14 @@ export default function Home() {
         <section id="clinic-features" className="py-8 bg-primary/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-xl font-bold text-center mb-4">Diferenciais da clínica</h2>
+            <div className="mb-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-left">
+                {clinicFeatures.map((feature, index) => (
+                    <div key={index} className="flex items-center p-2 rounded-lg">
+                      <feature.icon className="h-7 w-7 text-primary mr-3 flex-shrink-0" />
+                      <p className="text-sm text-foreground/80">{feature.text}</p>
+                    </div>
+                ))}
+            </div>
             {heroImage && (
               <div className="mt-6">
                 <Image
@@ -289,14 +299,6 @@ export default function Home() {
                 />
               </div>
             )}
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-4 text-left">
-                {clinicFeatures.map((feature, index) => (
-                    <div key={index} className="flex items-center p-2 rounded-lg">
-                      <feature.icon className="h-7 w-7 text-primary mr-3 flex-shrink-0" />
-                      <p className="text-sm text-foreground/80">{feature.text}</p>
-                    </div>
-                ))}
-            </div>
              <div className="text-center pt-8">
                  <Button
                     asChild
@@ -364,5 +366,7 @@ export default function Home() {
     </div>
   );
 }
+
+    
 
     
