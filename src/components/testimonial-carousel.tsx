@@ -46,28 +46,26 @@ export function TestimonialCarousel({
           <CarouselItem key={index} className="pl-4 md:basis-1/2">
             <div className="p-1 h-full">
               <Card className="h-full p-6 shadow-lg">
-                <div className="flex gap-4">
-                  <div className="flex flex-col items-start w-20 flex-shrink-0">
-                    <Avatar className="w-12 h-12">
-                      <AvatarImage
-                        src={testimonial.avatarUrl}
-                        alt={testimonial.author}
-                        data-ai-hint={testimonial.avatarHint}
-                      />
-                      <AvatarFallback>
-                        {testimonial.author.charAt(0)}
-                      </AvatarFallback>
-                    </Avatar>
-                  </div>
-                  <div className="flex flex-col">
-                    <p className="text-sm font-semibold">{testimonial.author}</p>
+                <div className="flex items-center gap-4">
+                  <Avatar className="w-16 h-16 flex-shrink-0">
+                    <AvatarImage
+                      src={testimonial.avatarUrl}
+                      alt={testimonial.author}
+                      data-ai-hint={testimonial.avatarHint}
+                    />
+                    <AvatarFallback>
+                      {testimonial.author.charAt(0)}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="flex flex-col items-center flex-grow text-center">
+                    <p className="font-bold text-sm">{testimonial.author}</p>
                     <div className="flex items-center gap-0.5 mt-1">
                       {Array(5)
                         .fill(0)
                         .map((_, i) => (
                           <Star
                             key={i}
-                            className="h-3 w-3 text-yellow-400 fill-yellow-400"
+                            className="h-4 w-4 text-yellow-400 fill-yellow-400"
                           />
                         ))}
                     </div>
