@@ -12,7 +12,6 @@ import {
   Wifi,
   Stethoscope,
   Menu,
-  Star,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -31,6 +30,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Badge } from '@/components/ui/badge';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
+import { LogoIcon } from '@/components/icons/logo-icon';
 
 
 const profileData = {
@@ -142,18 +142,7 @@ export default function Home() {
       <header className="sticky top-0 z-50 transition-all duration-300 bg-primary/80 backdrop-blur-sm border-b border-primary/20">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Avatar className="w-10 h-10">
-              {heroImage && (
-                <AvatarImage
-                  src={heroImage.imageUrl}
-                  alt={profileData.endereco.nomeClinica}
-                  data-ai-hint={heroImage.imageHint}
-                />
-              )}
-              <AvatarFallback className="bg-primary/10 text-primary-foreground">
-                {profileData.endereco.nomeClinica.split(' ').map((n) => n[0]).slice(0, 2).join('')}
-              </AvatarFallback>
-            </Avatar>
+            <LogoIcon className="w-10 h-10 text-primary-foreground" />
             <div>
               <p className="font-bold text-sm text-primary-foreground">{profileData.endereco.nomeClinica}</p>
               <p className="text-[11px] text-background/80">Consulta Presencial | Consulta Online</p>
@@ -378,5 +367,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
