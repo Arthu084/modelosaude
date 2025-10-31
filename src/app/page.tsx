@@ -150,7 +150,7 @@ export default function Home() {
     <div className="flex flex-col min-h-dvh bg-background font-body text-foreground">
       <header className={cn(
           "sticky top-0 z-50 transition-all duration-300",
-          isScrolled ? "bg-background/80 backdrop-blur-sm border-b" : "bg-transparent"
+          isScrolled ? "bg-primary/80 backdrop-blur-sm border-b border-primary/20" : "bg-transparent"
         )}>
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
@@ -167,15 +167,15 @@ export default function Home() {
               </AvatarFallback>
             </Avatar>
             <div>
-              <p className={cn("font-bold text-base", isScrolled ? "text-foreground" : "text-background")}>{profileData.endereco.nomeClinica}</p>
-              <p className={cn("text-xs", isScrolled ? "text-muted-foreground" : "text-background/80")}>{profileData.headline}</p>
+              <p className={cn("font-bold text-base text-primary-foreground")}>{profileData.endereco.nomeClinica}</p>
+              <p className={cn("text-xs", isScrolled ? "text-primary-foreground/80" : "text-background/80")}>{profileData.headline}</p>
             </div>
           </div>
           <div className="hidden sm:flex">
              <Button
                 asChild
                 size="sm"
-                variant={isScrolled ? "default" : "secondary"}
+                variant={isScrolled ? "secondary" : "secondary"}
                 className="rounded-md shadow-md transition-transform transform hover:scale-105 text-sm"
               >
                 <Link
@@ -190,7 +190,7 @@ export default function Home() {
           <div className="sm:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className={cn("hover:bg-primary/80", isScrolled ? "text-foreground" : "text-background")}>
+                <Button variant="ghost" size="icon" className={cn("hover:bg-primary/80 text-primary-foreground")}>
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Abrir menu</span>
                 </Button>
@@ -219,6 +219,7 @@ export default function Home() {
                       src={profileImage.imageUrl}
                       alt={profileData.nome}
                       data-ai-hint={profileImage.imageHint}
+                      className="shadow-lg"
                     />
                   )}
                   <AvatarFallback className="bg-primary/10 text-3xl">
