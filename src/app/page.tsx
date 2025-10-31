@@ -265,7 +265,7 @@ export default function Home() {
                         </div>
                     ))}
                 </div>
-                <p className="text-sm text-muted-foreground mt-4 italic max-w-2xl mx-auto">
+                <p className="text-xs text-muted-foreground mt-4 italic max-w-2xl mx-auto">
                     “Cada tratamento é personalizado de acordo com a necessidade e o tipo de pele do paciente.”
                 </p>
             </div>
@@ -303,29 +303,28 @@ export default function Home() {
                 />
               </div>
             )}
+            <div className="text-center pt-8">
+                 <Button
+                    asChild
+                    size="lg"
+                    className="w-full max-w-xs font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
+                    >
+                    <Link
+                        href={profileData.whatsapp}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        AGENDAR MINHA CONSULTA
+                    </Link>
+                 </Button>
+            </div>
           </div>
         </section>
-
-        <div className="container mx-auto px-4 max-w-3xl text-center pt-8 pb-4">
-             <Button
-                asChild
-                size="lg"
-                className="w-full max-w-xs font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
-                >
-                <Link
-                    href={profileData.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    AGENDAR MINHA CONSULTA
-                </Link>
-             </Button>
-        </div>
 
         {/* Connect Section */}
         <section id="connect" className="py-4 bg-muted/40">
             <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-xl font-bold mb-4">Conecte-se Comigo</h2>
+                <h2 className="text-xl font-bold mb-4 mt-4">Conecte-se Comigo</h2>
                 <div className="flex flex-col gap-3">
                     {socialLinks.map((link) => (
                         <LinkCard key={link.href} {...link} />
