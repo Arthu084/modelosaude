@@ -14,6 +14,7 @@ import {
   Youtube,
   Linkedin,
   Menu,
+  Star,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -33,6 +34,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Badge } from '@/components/ui/badge';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
+import { Card } from '@/components/ui/card';
 
 
 const profileData = {
@@ -299,9 +301,13 @@ export default function Home() {
         </section>
         
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-8">
+        <section id="testimonials" className="py-8 overflow-hidden">
           <div className="container mx-auto px-4 max-w-4xl text-center">
-            <h2 className="text-xl font-bold text-center mb-6">O que minhas pacientes dizem</h2>
+            <h2 className="text-xl font-bold text-center mb-6">
+              O que minhas
+              <br />
+              pacientes dizem:
+            </h2>
             <TestimonialCarousel testimonials={testimonials} />
           </div>
         </section>
