@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -8,7 +9,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
-import { Quote } from "lucide-react";
+import { Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
@@ -72,19 +73,24 @@ export function TestimonialCarousel() {
           {testimonials.map((testimonial, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1 h-full">
-                <Card className="flex flex-col justify-between items-center shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 border-0 bg-card p-6">
-                  <Avatar className="w-16 h-16 mb-4">
+                <Card className="flex flex-col justify-between items-center text-center shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 border-0 bg-card p-6 h-full">
+                   <Avatar className="w-16 h-16 mb-4">
                     <AvatarImage src={testimonial.avatarUrl} alt={testimonial.author} data-ai-hint={testimonial.avatarHint} />
                     <AvatarFallback>{testimonial.author.charAt(0)}</AvatarFallback>
                   </Avatar>
-                  <CardContent className="p-0 text-center">
+                  <div className="flex flex-col items-center space-y-2">
+                    <p className="font-bold text-sm">{testimonial.author}</p>
+                    <div className="flex items-center gap-0.5">
+                        {Array(5).fill(0).map((_, i) => (
+                            <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                        ))}
+                    </div>
+                  </div>
+                  <CardContent className="p-0 text-center mt-4">
                     <p className="text-muted-foreground text-sm italic leading-relaxed">
                       "{testimonial.quote}"
                     </p>
                   </CardContent>
-                  <div className="p-0 pt-4 text-center">
-                     <p className="font-bold text-sm mt-2">- {testimonial.author}</p>
-                  </div>
                 </Card>
               </div>
             </CarouselItem>
@@ -107,5 +113,3 @@ export function TestimonialCarousel() {
     </div>
   );
 }
-
-    
