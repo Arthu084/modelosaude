@@ -63,8 +63,6 @@ const benefits = [
   { text: 'Consultas personalizadas com foco no seu histórico e rotina' },
   { text: 'Acompanhamento contínuo para garantir resultados reais' },
   { text: 'Atendimento humanizado, sem pressa' },
-  { text: 'Suporte via WhatsApp para dúvidas entre consultas' },
-  { text: 'Opção de atendimento online (telemedicina)' },
 ];
 
 const clinicFeatures = [
