@@ -228,14 +228,14 @@ export default function Home() {
                 Nossa equipe está preparada para oferecer um atendimento ágil, humano e com total privacidade.
               </p>
                <div className="w-full max-w-md pt-2">
-                {heroImage && (
+                {profileImage && (
                   <Image
-                    src={heroImage.imageUrl}
+                    src={profileImage.imageUrl}
                     alt={profileData.nome}
                     width={384}
                     height={384}
                     className="rounded-2xl shadow-xl object-cover aspect-square w-full mx-auto"
-                    data-ai-hint={heroImage.imageHint}
+                    data-ai-hint={profileImage.imageHint}
                   />
                 )}
               </div>
@@ -325,6 +325,18 @@ export default function Home() {
                 </div>
               ))}
             </div>
+            {heroImage && (
+              <div className="mt-8">
+                <Image
+                  src={heroImage.imageUrl}
+                  alt={profileData.endereco.nomeClinica}
+                  width={600}
+                  height={400}
+                  className="rounded-2xl shadow-lg object-cover w-full mx-auto"
+                  data-ai-hint={heroImage.imageHint}
+                />
+              </div>
+            )}
           </div>
         </section>
         
@@ -411,3 +423,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
