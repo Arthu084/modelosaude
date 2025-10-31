@@ -379,21 +379,21 @@ export default function Home() {
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-xl font-bold text-center mb-6">Modelo de Depoimento (Teste)</h2>
             <Card className="p-6 shadow-lg">
-                <div className="flex gap-6">
-                    <div className="flex flex-col items-center flex-shrink-0">
-                        <Avatar className="w-20 h-20">
+                <div className="flex gap-4">
+                    <div className="flex flex-col items-center flex-shrink-0 w-24 text-center">
+                        <Avatar className="w-16 h-16">
                             <AvatarImage src="https://picsum.photos/seed/patient5/100/100" alt="Ana B." data-ai-hint="woman portrait" />
                             <AvatarFallback>AB</AvatarFallback>
                         </Avatar>
                         <p className="mt-2 text-sm font-semibold">Ana B.</p>
-                    </div>
-                    <div className="flex flex-col">
-                        <div className="flex items-center gap-0.5">
+                        <div className="flex items-center gap-0.5 mt-1">
                             {Array(5).fill(0).map((_, i) => (
-                                <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                                <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
                             ))}
                         </div>
-                        <p className="mt-2 text-muted-foreground text-sm">
+                    </div>
+                    <div className="flex flex-col justify-center">
+                        <p className="text-muted-foreground text-sm">
                             "Excelente profissional! Me senti muito à vontade durante a consulta e o tratamento superou minhas expectativas. Recomendo muito a Dra. Fernanda."
                         </p>
                     </div>
@@ -412,3 +412,4 @@ export default function Home() {
     </div>
   );
 }
+
