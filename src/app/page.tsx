@@ -8,6 +8,9 @@ import {
   CheckCircle2,
   Stethoscope,
   Menu,
+  Heart,
+  Smile,
+  Clock,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -59,6 +62,12 @@ const treatmentItems = [
     { icon: Stethoscope, text: "Rejuvenescimento a laser" },
     { icon: Stethoscope, text: "Cuidados com Melasma" },
 ]
+
+const clinicFeatures = [
+    { icon: Heart, text: 'Atendimento humanizado e individualizado' },
+    { icon: Smile, text: 'Ambiente acolhedor e confortável' },
+    { icon: Clock, text: 'Pontualidade e respeito ao seu tempo' },
+];
 
 const faqItems = [
     {
@@ -280,7 +289,15 @@ export default function Home() {
                 />
               </div>
             )}
-             <div className="text-center pt-4">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-4 text-left">
+                {clinicFeatures.map((feature, index) => (
+                    <div key={index} className="flex items-center p-2 rounded-lg">
+                      <feature.icon className="h-7 w-7 text-primary mr-3 flex-shrink-0" />
+                      <p className="text-sm text-foreground/80">{feature.text}</p>
+                    </div>
+                ))}
+            </div>
+             <div className="text-center pt-8">
                  <Button
                     asChild
                     size="lg"
