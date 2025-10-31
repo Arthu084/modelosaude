@@ -305,7 +305,7 @@ export default function Home() {
                 />
               </div>
             )}
-             <div className="text-center pt-6">
+             <div className="text-center pt-4">
                  <Button
                     asChild
                     size="lg"
@@ -324,7 +324,7 @@ export default function Home() {
         </section>
 
         {/* Connect Section */}
-        <section id="connect" className="pt-8 pb-4 bg-muted/40">
+        <section id="connect" className="pt-4 pb-4 bg-muted/40">
             <div className="container mx-auto px-4 max-w-3xl text-center">
                 <h2 className="text-xl font-bold mb-4">Conecte-se Comigo</h2>
                 <div className="flex flex-col gap-3">
@@ -337,8 +337,8 @@ export default function Home() {
         
         {/* FAQ Section */}
         <section id="faq" className="py-8">
-            <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-xl font-bold mb-4">Perguntas Frequentes</h2>
+            <div className="container mx-auto px-4 max-w-3xl">
+                <h2 className="text-xl font-bold mb-4 text-center">Perguntas Frequentes</h2>
                 <Accordion type="single" collapsible className="w-full text-left">
                     {faqItems.map((item, index) => (
                          <AccordionItem value={`item-${index}`} key={index}>
@@ -379,20 +379,20 @@ export default function Home() {
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-xl font-bold text-center mb-6">Modelo de Depoimento (Teste)</h2>
             <Card className="p-6 shadow-lg">
-                <div className="flex gap-4">
-                    <div className="flex flex-col items-center flex-shrink-0 w-24 text-center">
-                        <Avatar className="w-16 h-16">
+                <div className="flex gap-4 items-start">
+                    <div className="flex flex-col items-start flex-shrink-0 w-20 text-left">
+                        <Avatar className="w-12 h-12">
                             <AvatarImage src="https://picsum.photos/seed/patient5/100/100" alt="Ana B." data-ai-hint="woman portrait" />
                             <AvatarFallback>AB</AvatarFallback>
                         </Avatar>
-                        <p className="mt-2 text-sm font-semibold">Ana B.</p>
-                        <div className="flex items-center gap-0.5 mt-1">
+                        <p className="mt-1.5 text-xs font-semibold">Ana B.</p>
+                        <div className="flex items-center gap-0.5 mt-0.5">
                             {Array(5).fill(0).map((_, i) => (
-                                <Star key={i} className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                                <Star key={i} className="h-3 w-3 text-yellow-400 fill-yellow-400" />
                             ))}
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center">
+                    <div className="flex flex-col justify-center mt-1">
                         <p className="text-muted-foreground text-sm">
                             "Excelente profissional! Me senti muito à vontade durante a consulta e o tratamento superou minhas expectativas. Recomendo muito a Dra. Fernanda."
                         </p>
