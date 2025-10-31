@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from 'next/image';
@@ -117,7 +118,7 @@ const menuLinks = [
   { href: "#clinic-features", label: "Diferenciais da Clínica" },
   { href: "#faq", label: "Perguntas Frequentes" },
   { href: "#connect", label: "Conecte-se Comigo" },
-  { href: "#location", label: "Onde me encontrar" },
+  { href: "#location", label: "Nossa Localização" },
 ];
 
 const testimonials = [
@@ -304,9 +305,7 @@ export default function Home() {
         <section id="testimonials" className="py-8 overflow-hidden">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <h2 className="text-xl font-bold text-center mb-6">
-              O que minhas
-              <br />
-              pacientes dizem:
+              O que minhas pacientes dizem:
             </h2>
             <TestimonialCarousel testimonials={testimonials} />
           </div>
@@ -386,7 +385,7 @@ export default function Home() {
          {/* Location Section */}
         <section id="location" className="pt-4 pb-8 bg-muted/50">
             <div className="container mx-auto px-4 max-w-4xl text-center">
-                <h2 className="text-xl font-bold mb-4">Onde me encontrar</h2>
+                <h2 className="text-xl font-bold mb-4">Nossa Localização</h2>
                 <p className="text-sm text-muted-foreground mb-4">
                     <MapPin className="inline-block h-5 w-5 mr-2 text-primary" />
                     {profileData.endereco.nomeClinica} - {profileData.endereco.rua}, {profileData.endereco.cidade}
@@ -415,3 +414,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
