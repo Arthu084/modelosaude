@@ -227,18 +227,6 @@ export default function Home() {
               <p className="text-sm text-muted-foreground max-w-3xl">
                 Nossa equipe está preparada para oferecer um atendimento ágil, humano e com total privacidade.
               </p>
-               <div className="w-full max-w-md pt-2">
-                {profileImage && (
-                  <Image
-                    src={profileImage.imageUrl}
-                    alt={profileData.nome}
-                    width={384}
-                    height={384}
-                    className="rounded-2xl shadow-xl object-cover aspect-square w-full mx-auto"
-                    data-ai-hint={profileImage.imageHint}
-                  />
-                )}
-              </div>
              
               <Button
                 asChild
@@ -423,5 +411,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
