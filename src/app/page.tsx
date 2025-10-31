@@ -203,7 +203,7 @@ export default function Home() {
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="flex flex-col items-center space-y-2">
-                <Avatar className="w-20 h-20">
+                <Avatar className="w-20 h-20 shadow-md">
                   {profileImage && (
                     <AvatarImage
                       src={profileImage.imageUrl}
@@ -292,41 +292,6 @@ export default function Home() {
                 </div>
             </div>
         </section>
-
-        {/* Testimonials Section */}
-        <section id="testimonials" className="py-8 bg-primary/5">
-            <div className="container mx-auto px-4 max-w-5xl text-center">
-                <h2 className="text-xl font-bold text-center mb-6">O que minhas pacientes dizem</h2>
-                <TestimonialCarousel />
-            </div>
-        </section>
-
-        {/* Clinic Features Section */}
-        <section id="clinic-features" className="py-8">
-          <div className="container mx-auto px-4 max-w-4xl">
-            <h2 className="text-xl font-bold text-center mb-4">Diferenciais da clínica</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0">
-              {clinicFeatures.map((feature, index) => (
-                <div key={index} className="flex items-center p-2 rounded-lg">
-                  <feature.icon className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
-                  <p className="text-md text-foreground/80">{feature.text}</p>
-                </div>
-              ))}
-            </div>
-            {heroImage && (
-              <div className="mt-8">
-                <Image
-                  src={heroImage.imageUrl}
-                  alt={profileData.endereco.nomeClinica}
-                  width={600}
-                  height={400}
-                  className="rounded-2xl shadow-lg object-cover w-full mx-auto"
-                  data-ai-hint={heroImage.imageHint}
-                />
-              </div>
-            )}
-          </div>
-        </section>
         
         {/* FAQ Section */}
         <section id="faq" className="py-8">
@@ -356,6 +321,33 @@ export default function Home() {
                   </Link>
                 </Button>
             </div>
+        </section>
+        
+        {/* Clinic Features Section */}
+        <section id="clinic-features" className="py-8 bg-primary/5">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <h2 className="text-xl font-bold text-center mb-4">Diferenciais da clínica</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0">
+              {clinicFeatures.map((feature, index) => (
+                <div key={index} className="flex items-center p-2 rounded-lg">
+                  <feature.icon className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
+                  <p className="text-md text-foreground/80">{feature.text}</p>
+                </div>
+              ))}
+            </div>
+            {heroImage && (
+              <div className="mt-8">
+                <Image
+                  src={heroImage.imageUrl}
+                  alt={profileData.endereco.nomeClinica}
+                  width={600}
+                  height={400}
+                  className="rounded-2xl shadow-lg object-cover w-full mx-auto"
+                  data-ai-hint={heroImage.imageHint}
+                />
+              </div>
+            )}
+          </div>
         </section>
 
         {/* Connect Section */}
@@ -389,6 +381,14 @@ export default function Home() {
                         referrerPolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
+            </div>
+        </section>
+
+        {/* Testimonials Section */}
+        <section id="testimonials" className="py-8">
+            <div className="container mx-auto px-4 max-w-5xl text-center">
+                <h2 className="text-xl font-bold text-center mb-6">O que minhas pacientes dizem</h2>
+                <TestimonialCarousel />
             </div>
         </section>
       </main>
