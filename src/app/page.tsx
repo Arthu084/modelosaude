@@ -281,7 +281,7 @@ export default function Home() {
         <section id="testimonials" className="py-8 overflow-hidden">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <h2 className="text-xl font-bold text-center mb-6">
-              O que minhas pacientes dizem:
+              O que os pacientes dizem:
             </h2>
             <TestimonialCarousel testimonials={testimonials} />
           </div>
