@@ -387,7 +387,7 @@ export default function Home() {
         <section id="location" className="pt-4 pb-8 bg-muted/50">
             <div className="container mx-auto px-4 max-w-4xl text-center">
                 <h2 className="text-xl font-bold mb-4">Onde me encontrar</h2>
-                <p className="text-md text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground mb-4">
                     <MapPin className="inline-block h-5 w-5 mr-2 text-primary" />
                     {profileData.endereco.nomeClinica} - {profileData.endereco.rua}, {profileData.endereco.cidade}
                 </p>
