@@ -145,11 +145,11 @@ export default function Home() {
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Avatar className="w-10 h-10">
-              {profileImage && (
+              {heroImage && (
                 <AvatarImage
-                  src={profileImage.imageUrl}
-                  alt={profileData.nome}
-                  data-ai-hint={profileImage.imageHint}
+                  src={heroImage.imageUrl}
+                  alt={profileData.endereco.nomeClinica}
+                  data-ai-hint={heroImage.imageHint}
                 />
               )}
               <AvatarFallback className="bg-primary/10">
@@ -219,14 +219,14 @@ export default function Home() {
                   <p className="text-sm text-muted-foreground">{profileData.especialidade} | {profileData.crm}</p>
                 </div>
               </div>
-               <p className="font-semibold text-primary pt-4">{profileData.headline}</p>
+               <p className="font-semibold text-primary">{profileData.headline}</p>
               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
                 {profileData.frase}
               </h1>
               <p className="text-sm text-muted-foreground max-w-3xl">
                 Nossa equipe está preparada para oferecer um atendimento ágil, humano e com total privacidade.
               </p>
-               <div className="w-full max-w-sm pt-2">
+               <div className="w-full max-w-md pt-2">
                 {heroImage && (
                   <Image
                     src={heroImage.imageUrl}
@@ -242,7 +242,7 @@ export default function Home() {
               <Button
                 asChild
                 size="lg"
-                className="w-full max-w-sm font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
+                className="w-full max-w-md font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
               >
                 <Link
                   href={profileData.whatsapp}
@@ -260,7 +260,7 @@ export default function Home() {
         <section id="benefits" className="py-8">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-xl font-bold text-center mb-4">Como posso te ajudar</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-1">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-0">
                 {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-center p-2 rounded-lg">
                       <CheckCircle2 className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
@@ -275,7 +275,7 @@ export default function Home() {
         <section id="treatments" className="py-8 bg-primary/5">
             <div className="container mx-auto px-4 max-w-4xl text-center">
                 <h2 className="text-xl font-bold mb-4">Tratamentos e Procedimentos</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1 text-left">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0 text-left">
                     {treatmentItems.map((item, index) => (
                         <div key={index} className="flex items-center p-2 rounded-lg">
                             <item.icon className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
@@ -293,7 +293,7 @@ export default function Home() {
         <section id="recognition" className="py-8">
             <div className="container mx-auto px-4 max-w-4xl">
                 <h2 className="text-xl font-bold text-center mb-4">Reconhecimento Profissional</h2>
-                <div className="grid grid-cols-1 gap-y-2">
+                <div className="grid grid-cols-1 gap-y-1">
                     {recognitionItems.map((item, index) => (
                         <div key={index} className="flex items-center p-4 rounded-lg bg-card border shadow-sm">
                             <item.icon className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
@@ -316,7 +316,7 @@ export default function Home() {
         <section id="clinic-features" className="py-8">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-xl font-bold text-center mb-4">Diferenciais da clínica</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-1">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0">
               {clinicFeatures.map((feature, index) => (
                 <div key={index} className="flex items-center p-2 rounded-lg">
                   <feature.icon className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
