@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import Image from 'next/image';
@@ -11,13 +9,11 @@ import {
   Sparkles,
   ParkingCircle,
   Wifi,
-  Users,
   Stethoscope,
   Instagram,
   Youtube,
   Linkedin,
   Menu,
-  Star,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -36,9 +32,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Badge } from '@/components/ui/badge';
-import { useState, useEffect } from 'react';
-import { cn } from '@/lib/utils';
-import { Card, CardContent } from '@/components/ui/card';
+import { TestimonialCarousel } from '@/components/testimonial-carousel';
 
 
 const profileData = {
@@ -308,31 +302,7 @@ export default function Home() {
         <section id="testimonials" className="py-8">
           <div className="container mx-auto px-4 max-w-4xl text-center">
             <h2 className="text-xl font-bold text-center mb-6">O que minhas pacientes dizem</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {testimonials.map((testimonial, index) => (
-                <Card key={index} className="p-6 shadow-lg">
-                  <div className="flex gap-2 items-start">
-                    <div className="flex flex-col items-start flex-shrink-0 w-20 text-left">
-                      <Avatar className="w-12 h-12">
-                        <AvatarImage src={testimonial.avatarUrl} alt={testimonial.author} data-ai-hint={testimonial.avatarHint} />
-                        <AvatarFallback>{testimonial.author.charAt(0)}</AvatarFallback>
-                      </Avatar>
-                      <p className="mt-1.5 text-xs font-semibold">{testimonial.author}</p>
-                      <div className="flex items-center gap-0.5 mt-0.5">
-                        {Array(5).fill(0).map((_, i) => (
-                          <Star key={i} className="h-3 w-3 text-yellow-400 fill-yellow-400" />
-                        ))}
-                      </div>
-                    </div>
-                    <div className="flex flex-col justify-center mt-1">
-                      <p className="text-muted-foreground text-xs">
-                        "{testimonial.quote}"
-                      </p>
-                    </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
+            <TestimonialCarousel testimonials={testimonials} />
           </div>
         </section>
         
@@ -382,7 +352,7 @@ export default function Home() {
         <section id="connect" className="pt-4 pb-4 bg-muted/40">
             <div className="container mx-auto px-4 max-w-3xl text-center">
                 <h2 className="text-xl font-bold mb-4">Conecte-se Comigo</h2>
-                <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
                     {socialLinks.map((link) => (
                         <LinkCard key={link.href} {...link} />
                     ))}
@@ -439,7 +409,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-    
