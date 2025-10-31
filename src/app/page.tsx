@@ -201,7 +201,25 @@ export default function Home() {
         <section id="hero" className="py-6 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
-               <p className="font-semibold text-primary">{profileData.headline}</p>
+              <div className="flex flex-col items-center space-y-4">
+                <Avatar className="w-24 h-24">
+                  {profileImage && (
+                    <AvatarImage
+                      src={profileImage.imageUrl}
+                      alt={profileData.nome}
+                      data-ai-hint={profileImage.imageHint}
+                    />
+                  )}
+                  <AvatarFallback className="bg-primary/10 text-3xl">
+                    {profileData.nome.split(' ').map((n) => n[0]).slice(0, 2).join('')}
+                  </AvatarFallback>
+                </Avatar>
+                <div>
+                  <p className="font-bold text-2xl">{profileData.nome}</p>
+                  <p className="text-sm text-muted-foreground">{profileData.especialidade} | {profileData.crm}</p>
+                </div>
+              </div>
+               <p className="font-semibold text-primary pt-4">{profileData.headline}</p>
               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
                 {profileData.frase}
               </h1>
