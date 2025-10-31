@@ -278,6 +278,14 @@ export default function Home() {
             </div>
         </section>
 
+        {/* Testimonials Section */}
+        <section id="testimonials" className="py-8">
+            <div className="container mx-auto px-4 max-w-5xl text-center">
+                <h2 className="text-xl font-bold text-center mb-6">O que minhas pacientes dizem</h2>
+                <TestimonialCarousel />
+            </div>
+        </section>
+
         {/* Professional Recognition Section */}
         <section id="recognition" className="py-8">
             <div className="container mx-auto px-4 max-w-4xl">
@@ -384,13 +392,6 @@ export default function Home() {
             </div>
         </section>
 
-        {/* Testimonials Section */}
-        <section id="testimonials" className="py-8">
-            <div className="container mx-auto px-4 max-w-5xl text-center">
-                <h2 className="text-xl font-bold text-center mb-6">O que minhas pacientes dizem</h2>
-                <TestimonialCarousel />
-            </div>
-        </section>
       </main>
 
       <footer className="py-8 bg-muted border-t">
