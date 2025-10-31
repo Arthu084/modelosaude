@@ -9,9 +9,6 @@ import {
   ParkingCircle,
   Wifi,
   Users,
-  Award,
-  BookOpen,
-  Presentation,
   Stethoscope,
   Instagram,
   Youtube,
@@ -28,7 +25,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
-import { WhatsAppIcon } from '@/components/icons/whatsapp-icon';
 import { LinkCard } from '@/components/link-card';
 import {
   DropdownMenu,
@@ -135,7 +131,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-dvh bg-background font-body text-foreground">
-      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b">
+      <header className="sticky top-0 z-50 bg-primary text-primary-foreground border-b border-primary">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Avatar className="w-10 h-10">
@@ -146,19 +142,20 @@ export default function Home() {
                   data-ai-hint={heroImage.imageHint}
                 />
               )}
-              <AvatarFallback className="bg-primary/10">
+              <AvatarFallback className="bg-primary/10 text-primary-foreground">
                 {profileData.endereco.nomeClinica.split(' ').map((n) => n[0]).slice(0, 2).join('')}
               </AvatarFallback>
             </Avatar>
             <div>
-              <p className="font-bold text-base">{profileData.endereco.nomeClinica}</p>
-              <p className="text-xs text-muted-foreground">{profileData.headline}</p>
+              <p className="font-bold text-base text-primary-foreground">{profileData.endereco.nomeClinica}</p>
+              <p className="text-xs text-primary-foreground/80">{profileData.headline}</p>
             </div>
           </div>
           <div className="hidden sm:flex">
              <Button
                 asChild
                 size="sm"
+                variant="secondary"
                 className="rounded-md shadow-md transition-transform transform hover:scale-105 text-sm"
               >
                 <Link
@@ -173,7 +170,7 @@ export default function Home() {
           <div className="sm:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon">
+                <Button variant="ghost" size="icon" className="hover:bg-primary/80">
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Abrir menu</span>
                 </Button>
@@ -209,7 +206,7 @@ export default function Home() {
                   </AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-bold text-base">{profileData.nome}</p>
+                  <p className="font-bold text-sm">{profileData.nome}</p>
                   <p className="text-xs text-muted-foreground">{profileData.especialidade} | {profileData.crm}</p>
                 </div>
               </div>
@@ -322,9 +319,9 @@ export default function Home() {
         </section>
 
         {/* Connect Section */}
-        <section id="connect" className="py-4 bg-muted/40">
+        <section id="connect" className="pt-8 pb-4 bg-muted/40">
             <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-xl font-bold mb-4 mt-4">Conecte-se Comigo</h2>
+                <h2 className="text-xl font-bold mb-4">Conecte-se Comigo</h2>
                 <div className="flex flex-col gap-3">
                     {socialLinks.map((link) => (
                         <LinkCard key={link.href} {...link} />
