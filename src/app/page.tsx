@@ -1,4 +1,6 @@
 
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
 import {
@@ -33,6 +35,9 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Badge } from '@/components/ui/badge';
+import { useState, useEffect } from 'react';
+import { cn } from '@/lib/utils';
+
 
 const profileData = {
   nome: 'Dra. Fernanda Costa',
@@ -129,9 +134,24 @@ export default function Home() {
     (p) => p.id === profileData.fotoHeroId
   );
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="flex flex-col min-h-dvh bg-background font-body text-foreground">
-      <header className="sticky top-0 z-50 bg-primary text-primary-foreground border-b border-primary">
+      <header className={cn(
+          "sticky top-0 z-50 transition-all duration-300",
+          isScrolled ? "bg-background/80 backdrop-blur-sm border-b" : "bg-transparent"
+        )}>
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Avatar className="w-10 h-10">
@@ -147,15 +167,15 @@ export default function Home() {
               </AvatarFallback>
             </Avatar>
             <div>
-              <p className="font-bold text-base text-primary-foreground">{profileData.endereco.nomeClinica}</p>
-              <p className="text-xs text-primary-foreground/80">{profileData.headline}</p>
+              <p className={cn("font-bold text-base", isScrolled ? "text-foreground" : "text-background")}>{profileData.endereco.nomeClinica}</p>
+              <p className={cn("text-xs", isScrolled ? "text-muted-foreground" : "text-background/80")}>{profileData.headline}</p>
             </div>
           </div>
           <div className="hidden sm:flex">
              <Button
                 asChild
                 size="sm"
-                variant="secondary"
+                variant={isScrolled ? "default" : "secondary"}
                 className="rounded-md shadow-md transition-transform transform hover:scale-105 text-sm"
               >
                 <Link
@@ -170,7 +190,7 @@ export default function Home() {
           <div className="sm:hidden">
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="hover:bg-primary/80">
+                <Button variant="ghost" size="icon" className={cn("hover:bg-primary/80", isScrolled ? "text-foreground" : "text-background")}>
                   <Menu className="h-6 w-6" />
                   <span className="sr-only">Abrir menu</span>
                 </Button>
@@ -379,3 +399,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
