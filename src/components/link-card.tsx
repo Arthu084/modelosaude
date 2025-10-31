@@ -16,15 +16,15 @@ export function LinkCard({ href, icon: Icon, title }: LinkCardProps) {
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        'group flex items-center justify-between w-full p-4 rounded-xl shadow-sm transition-all duration-300 border',
+        'group flex items-center justify-between w-full p-3 rounded-lg shadow-sm transition-all duration-300 border',
         'bg-card hover:bg-card/95 hover:shadow-md transform hover:-translate-y-1'
       )}
     >
       <div className="flex items-center">
-        {Icon && <Icon className="mr-4 h-7 w-7 text-primary" />}
-        <span className="font-semibold text-lg text-card-foreground">{title}</span>
+        {Icon && <Icon className="mr-3 h-6 w-6 text-primary" />}
+        <span className="font-semibold text-base text-card-foreground">{title}</span>
       </div>
-      <ChevronRight className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors" />
+      <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
     </Link>
   );
 }
