@@ -379,7 +379,7 @@ export default function Home() {
           <div className="container mx-auto px-4 max-w-3xl">
             <h2 className="text-xl font-bold text-center mb-6">Modelo de Depoimento (Teste)</h2>
             <Card className="p-6 shadow-lg">
-                <div className="flex gap-4 items-start">
+                <div className="flex gap-2 items-start">
                     <div className="flex flex-col items-start flex-shrink-0 w-20 text-left">
                         <Avatar className="w-12 h-12">
                             <AvatarImage src="https://picsum.photos/seed/patient5/100/100" alt="Ana B." data-ai-hint="woman portrait" />
