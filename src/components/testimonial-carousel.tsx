@@ -46,8 +46,8 @@ export function TestimonialCarousel({
           <CarouselItem key={index} className="pl-4 md:basis-1/2">
             <div className="p-1 h-full">
               <Card className="h-full p-6 shadow-lg">
-                <div className="flex items-center gap-4">
-                  <Avatar className="w-16 h-16 flex-shrink-0">
+                <div className="flex flex-col items-center text-center gap-4">
+                  <Avatar className="w-16 h-16">
                     <AvatarImage
                       src={testimonial.avatarUrl}
                       alt={testimonial.author}
@@ -57,9 +57,9 @@ export function TestimonialCarousel({
                       {testimonial.author.charAt(0)}
                     </AvatarFallback>
                   </Avatar>
-                  <div className="flex flex-col items-center flex-grow text-center">
+                  <div className="flex flex-col items-center gap-1">
                     <p className="font-bold text-sm">{testimonial.author}</p>
-                    <div className="flex items-center gap-0.5 mt-1">
+                    <div className="flex items-center gap-0.5">
                       {Array(5)
                         .fill(0)
                         .map((_, i) => (
@@ -69,10 +69,10 @@ export function TestimonialCarousel({
                           />
                         ))}
                     </div>
-                    <p className="text-muted-foreground text-xs mt-2">
-                      "{testimonial.quote}"
-                    </p>
                   </div>
+                  <p className="text-muted-foreground text-sm italic">
+                    "{testimonial.quote}"
+                  </p>
                 </div>
               </Card>
             </div>
