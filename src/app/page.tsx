@@ -74,12 +74,6 @@ const clinicFeatures = [
     { icon: Users, text: "Equipe qualificada e atenciosa para um atendimento completo." }
 ]
 
-const recognitionItems = [
-    { icon: Award, text: "Membro da Sociedade Brasileira de Dermatologia (SBD)" },
-    { icon: Presentation, text: "Palestrante em eventos médicos nacionais" },
-    { icon: BookOpen, text: "Artigos publicados em revistas científicas" },
-]
-
 const treatmentItems = [
     { icon: Stethoscope, text: "Controle da acne e manchas" },
     { icon: Stethoscope, text: "Preenchimento facial e toxina botulínica" },
@@ -123,7 +117,6 @@ const faqItems = [
 const menuLinks = [
   { href: "#benefits", label: "Como posso te ajudar" },
   { href: "#treatments", label: "Tratamentos" },
-  { href: "#recognition", label: "Reconhecimento" },
   { href: "#testimonials", label: "Depoimentos" },
   { href: "#clinic-features", label: "Diferenciais da Clínica" },
   { href: "#faq", label: "Perguntas Frequentes" },
@@ -277,57 +270,12 @@ export default function Home() {
                 </p>
             </div>
         </section>
-
+        
         {/* Testimonials Section */}
         <section id="testimonials" className="py-8">
             <div className="container mx-auto px-4 max-w-5xl text-center">
                 <h2 className="text-xl font-bold text-center mb-6">O que minhas pacientes dizem</h2>
                 <TestimonialCarousel />
-            </div>
-        </section>
-
-        {/* Professional Recognition Section */}
-        <section id="recognition" className="py-8">
-            <div className="container mx-auto px-4 max-w-4xl">
-                <h2 className="text-xl font-bold text-center mb-4">Reconhecimento Profissional</h2>
-                <div className="grid grid-cols-1 gap-y-1">
-                    {recognitionItems.map((item, index) => (
-                        <div key={index} className="flex items-center p-4 rounded-lg bg-card border shadow-sm">
-                            <item.icon className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
-                            <p className="text-md text-foreground/80">{item.text}</p>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-        
-        {/* FAQ Section */}
-        <section id="faq" className="py-8">
-            <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-xl font-bold mb-6">Perguntas Frequentes</h2>
-                <Accordion type="single" collapsible className="w-full text-left">
-                    {faqItems.map((item, index) => (
-                         <AccordionItem value={`item-${index}`} key={index}>
-                            <AccordionTrigger className="font-semibold text-md hover:no-underline">{item.question}</AccordionTrigger>
-                            <AccordionContent className="text-md text-foreground/80">
-                                {item.answer}
-                            </AccordionContent>
-                        </AccordionItem>
-                    ))}
-                </Accordion>
-                <Button
-                  asChild
-                  size="lg"
-                  className="mt-8 w-full max-w-xs font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
-                >
-                  <Link
-                    href={profileData.whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    AGENDAR MINHA CONSULTA
-                  </Link>
-                </Button>
             </div>
         </section>
         
@@ -358,6 +306,22 @@ export default function Home() {
           </div>
         </section>
 
+        <div className="container mx-auto px-4 max-w-3xl text-center py-8">
+             <Button
+                asChild
+                size="lg"
+                className="w-full max-w-xs font-bold py-6 text-sm rounded-md shadow-lg transition-transform transform hover:scale-105 animate-pulse-glow"
+                >
+                <Link
+                    href={profileData.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    AGENDAR MINHA CONSULTA
+                </Link>
+             </Button>
+        </div>
+
         {/* Connect Section */}
         <section id="connect" className="py-8 bg-muted/40">
             <div className="container mx-auto px-4 max-w-3xl text-center">
@@ -367,6 +331,23 @@ export default function Home() {
                         <LinkCard key={link.href} {...link} />
                     ))}
                 </div>
+            </div>
+        </section>
+        
+        {/* FAQ Section */}
+        <section id="faq" className="py-8">
+            <div className="container mx-auto px-4 max-w-3xl text-center">
+                <h2 className="text-xl font-bold mb-6">Perguntas Frequentes</h2>
+                <Accordion type="single" collapsible className="w-full text-left">
+                    {faqItems.map((item, index) => (
+                         <AccordionItem value={`item-${index}`} key={index}>
+                            <AccordionTrigger className="font-semibold text-md hover:no-underline">{item.question}</AccordionTrigger>
+                            <AccordionContent className="text-md text-foreground/80">
+                                {item.answer}
+                            </AccordionContent>
+                        </AccordionItem>
+                    ))}
+                </Accordion>
             </div>
         </section>
 
