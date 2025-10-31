@@ -36,6 +36,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { Badge } from '@/components/ui/badge';
 
 const profileData = {
   nome: 'Dra. Fernanda Costa',
@@ -219,7 +220,7 @@ export default function Home() {
                   <p className="text-xs text-muted-foreground">{profileData.especialidade} | {profileData.crm}</p>
                 </div>
               </div>
-               <p className="font-semibold text-primary">{profileData.headline}</p>
+              <Badge variant="secondary" className="text-primary-foreground bg-primary/10 text-primary font-semibold">Consulta Presencial | Consulta Online</Badge>
               <h1 className="text-2xl font-bold tracking-tight lg:text-3xl max-w-2xl">
                 {profileData.frase}
               </h1>
