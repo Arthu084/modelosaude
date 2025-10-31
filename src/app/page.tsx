@@ -215,7 +215,7 @@ export default function Home() {
                   </AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-bold text-lg">{profileData.nome}</p>
+                  <p className="font-bold text-base">{profileData.nome}</p>
                   <p className="text-xs text-muted-foreground">{profileData.especialidade} | {profileData.crm}</p>
                 </div>
               </div>
