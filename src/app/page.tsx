@@ -16,6 +16,7 @@ import {
   Youtube,
   Linkedin,
   Menu,
+  Star,
 } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -37,6 +38,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { Card, CardContent } from '@/components/ui/card';
 
 
 const profileData = {
@@ -274,7 +276,7 @@ export default function Home() {
         {/* Testimonials Section */}
         <section id="testimonials" className="py-8">
             <div className="container mx-auto px-4 max-w-5xl text-center">
-                <h2 className="text-xl font-bold text-center mb-6">O que minhas pacientes dizem</h2>
+                <h2 className="text-xl font-bold text-center mb-4">O que minhas pacientes dizem</h2>
                 <TestimonialCarousel />
             </div>
         </section>
@@ -303,7 +305,7 @@ export default function Home() {
                 />
               </div>
             )}
-            <div className="text-center pt-8">
+             <div className="text-center pt-6">
                  <Button
                     asChild
                     size="lg"
@@ -336,7 +338,7 @@ export default function Home() {
         {/* FAQ Section */}
         <section id="faq" className="py-8">
             <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-xl font-bold mb-6">Perguntas Frequentes</h2>
+                <h2 className="text-xl font-bold mb-4">Perguntas Frequentes</h2>
                 <Accordion type="single" collapsible className="w-full text-left">
                     {faqItems.map((item, index) => (
                          <AccordionItem value={`item-${index}`} key={index}>
@@ -372,6 +374,34 @@ export default function Home() {
             </div>
         </section>
 
+        {/* New Testimonial Card Section */}
+        <section id="new-testimonial-test" className="py-8">
+          <div className="container mx-auto px-4 max-w-3xl">
+            <h2 className="text-xl font-bold text-center mb-6">Modelo de Depoimento (Teste)</h2>
+            <Card className="p-6 shadow-lg">
+                <div className="flex gap-6">
+                    <div className="flex flex-col items-center flex-shrink-0">
+                        <Avatar className="w-20 h-20">
+                            <AvatarImage src="https://picsum.photos/seed/patient5/100/100" alt="Ana B." data-ai-hint="woman portrait" />
+                            <AvatarFallback>AB</AvatarFallback>
+                        </Avatar>
+                        <p className="mt-2 text-sm font-semibold">Ana B.</p>
+                    </div>
+                    <div className="flex flex-col">
+                        <div className="flex items-center gap-0.5">
+                            {Array(5).fill(0).map((_, i) => (
+                                <Star key={i} className="h-5 w-5 text-yellow-400 fill-yellow-400" />
+                            ))}
+                        </div>
+                        <p className="mt-2 text-muted-foreground text-sm">
+                            "Excelente profissional! Me senti muito à vontade durante a consulta e o tratamento superou minhas expectativas. Recomendo muito a Dra. Fernanda."
+                        </p>
+                    </div>
+                </div>
+            </Card>
+          </div>
+        </section>
+
       </main>
 
       <footer className="py-8 bg-muted border-t">
@@ -382,9 +412,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
-
-
-
-    
