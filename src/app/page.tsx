@@ -72,7 +72,6 @@ const clinicFeatures = [
     { icon: Sparkles, text: "Equipamentos modernos para diagnósticos e tratamentos precisos." },
     { icon: Wifi, text: "Wi-Fi cortesia para pacientes e acompanhantes em nossa sala de espera." },
     { icon: ParkingCircle, text: "Localização privilegiada com estacionamento conveniado próximo." },
-    { icon: Users, text: "Equipe qualificada e atenciosa para um atendimento completo." }
 ]
 
 const treatmentItems = [
@@ -388,3 +387,6 @@ export default function Home() {
 
     
 
+
+
+    
