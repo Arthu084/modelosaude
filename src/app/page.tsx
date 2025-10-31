@@ -152,8 +152,8 @@ export default function Home() {
               </AvatarFallback>
             </Avatar>
             <div>
-              <p className="font-bold text-base text-primary-foreground">{profileData.endereco.nomeClinica}</p>
-              <p className="text-xs text-background/80">Consulta Presencial | Consulta Online</p>
+              <p className="font-bold text-sm text-primary-foreground">{profileData.endereco.nomeClinica}</p>
+              <p className="text-[11px] text-background/80">Consulta Presencial | Consulta Online</p>
             </div>
           </div>
           <div className="hidden sm:flex">
@@ -387,3 +387,4 @@ export default function Home() {
 }
 
     
+
