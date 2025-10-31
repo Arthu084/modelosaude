@@ -201,8 +201,8 @@ export default function Home() {
         <section id="hero" className="py-6 bg-primary/5">
           <div className="container mx-auto px-4">
             <div className="flex flex-col items-center text-center space-y-4">
-              <div className="flex flex-col items-center space-y-4">
-                <Avatar className="w-24 h-24">
+              <div className="flex flex-col items-center space-y-2">
+                <Avatar className="w-20 h-20">
                   {profileImage && (
                     <AvatarImage
                       src={profileImage.imageUrl}
@@ -215,7 +215,7 @@ export default function Home() {
                   </AvatarFallback>
                 </Avatar>
                 <div>
-                  <p className="font-bold text-2xl">{profileData.nome}</p>
+                  <p className="font-bold text-xl">{profileData.nome}</p>
                   <p className="text-sm text-muted-foreground">{profileData.especialidade} | {profileData.crm}</p>
                 </div>
               </div>
