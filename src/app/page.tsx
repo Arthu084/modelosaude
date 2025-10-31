@@ -153,12 +153,12 @@ export default function Home() {
                 />
               )}
               <AvatarFallback className="bg-primary/10">
-                {profileData.nome.split(' ').map((n) => n[0]).slice(0, 2).join('')}
+                {profileData.endereco.nomeClinica.split(' ').map((n) => n[0]).slice(0, 2).join('')}
               </AvatarFallback>
             </Avatar>
             <div>
-              <p className="font-bold text-base">{profileData.nome}</p>
-              <p className="text-xs text-muted-foreground">{profileData.especialidade} | {profileData.crm}</p>
+              <p className="font-bold text-base">{profileData.endereco.nomeClinica}</p>
+              <p className="text-xs text-muted-foreground">{profileData.headline}</p>
             </div>
           </div>
           <div className="hidden sm:flex">
