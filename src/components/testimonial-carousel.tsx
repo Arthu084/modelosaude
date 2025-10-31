@@ -73,12 +73,12 @@ export function TestimonialCarousel() {
           {testimonials.map((testimonial, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
               <div className="p-1 h-full">
-                <Card className="flex flex-col justify-between items-center text-center shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 border-0 bg-card p-6 h-full">
-                   <Avatar className="w-16 h-16 mb-4">
+                <Card className="flex flex-col justify-start items-center text-center shadow-lg hover:shadow-xl transition-shadow transform hover:-translate-y-1 border-0 bg-card p-6 h-full">
+                  <Avatar className="w-16 h-16 mb-2">
                     <AvatarImage src={testimonial.avatarUrl} alt={testimonial.author} data-ai-hint={testimonial.avatarHint} />
                     <AvatarFallback>{testimonial.author.charAt(0)}</AvatarFallback>
                   </Avatar>
-                  <div className="flex flex-col items-center space-y-2">
+                  <div className="flex flex-col items-center space-y-1">
                     <p className="font-bold text-sm">{testimonial.author}</p>
                     <div className="flex items-center gap-0.5">
                         {Array(5).fill(0).map((_, i) => (
@@ -86,7 +86,7 @@ export function TestimonialCarousel() {
                         ))}
                     </div>
                   </div>
-                  <CardContent className="p-0 text-center mt-4">
+                  <CardContent className="p-0 text-center mt-3">
                     <p className="text-muted-foreground text-sm italic leading-relaxed">
                       "{testimonial.quote}"
                     </p>
