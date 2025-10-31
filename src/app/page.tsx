@@ -11,9 +11,6 @@ import {
   ParkingCircle,
   Wifi,
   Stethoscope,
-  Instagram,
-  Youtube,
-  Linkedin,
   Menu,
   Star,
 } from 'lucide-react';
@@ -26,7 +23,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-import { LinkCard } from '@/components/link-card';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -35,7 +31,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Badge } from '@/components/ui/badge';
 import { TestimonialCarousel } from '@/components/testimonial-carousel';
-import { Card } from '@/components/ui/card';
 
 
 const profileData = {
@@ -78,24 +73,6 @@ const treatmentItems = [
     { icon: Stethoscope, text: "Cuidados com Melasma" },
 ]
 
-const socialLinks = [
-    {
-        href: "https://instagram.com",
-        icon: Instagram,
-        title: "Siga-me no Instagram"
-    },
-    {
-        href: "https://youtube.com",
-        icon: Youtube,
-        title: "Acompanhe no YouTube"
-    },
-    {
-        href: "https://linkedin.com",
-        icon: Linkedin,
-        title: "Conecte-se no LinkedIn"
-    }
-]
-
 const faqItems = [
     {
         question: "Quais convênios vocês aceitam?",
@@ -117,7 +94,6 @@ const menuLinks = [
   { href: "#testimonials", label: "Depoimentos" },
   { href: "#clinic-features", label: "Diferenciais da Clínica" },
   { href: "#faq", label: "Perguntas Frequentes" },
-  { href: "#connect", label: "Conecte-se Comigo" },
   { href: "#location", label: "Nossa Localização" },
 ];
 
@@ -353,18 +329,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Connect Section */}
-        <section id="connect" className="pt-4 pb-4 bg-muted/40">
-            <div className="container mx-auto px-4 max-w-3xl text-center">
-                <h2 className="text-xl font-bold mb-4">Conecte-se Comigo</h2>
-                <div className="flex flex-col gap-1">
-                    {socialLinks.map((link) => (
-                        <LinkCard key={link.href} {...link} />
-                    ))}
-                </div>
-            </div>
-        </section>
-        
         {/* FAQ Section */}
         <section id="faq" className="py-8">
             <div className="container mx-auto px-4 max-w-3xl">
