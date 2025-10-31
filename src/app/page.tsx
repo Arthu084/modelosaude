@@ -379,20 +379,6 @@ export default function Home() {
             <p className="text-xs">Todos os direitos reservados. © {new Date().getFullYear()}</p>
         </div>
       </footer>
-
-      <Link
-        href={profileData.whatsapp}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-4 right-4 z-50 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition-colors"
-        aria-label="Agendar consulta pelo WhatsApp"
-      >
-        <WhatsAppIcon className="h-6 w-6" />
-      </Link>
     </div>
   );
 }
-
-    
-
-    
