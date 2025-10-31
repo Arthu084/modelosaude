@@ -98,11 +98,17 @@ export default {
             boxShadow: '0 0 15px 5px hsl(var(--primary) / 0.5)',
           },
         },
+        'scroll': {
+          'to': {
+            transform: 'translateX(-50%)',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'pulse-glow': 'pulse-glow 3s infinite ease-in-out',
+        'scroll': 'scroll 40s linear infinite',
       },
     },
   },

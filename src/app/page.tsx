@@ -352,7 +352,7 @@ export default function Home() {
         <section id="connect" className="pt-4 pb-4 bg-muted/40">
             <div className="container mx-auto px-4 max-w-3xl text-center">
                 <h2 className="text-xl font-bold mb-4">Conecte-se Comigo</h2>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-1">
                     {socialLinks.map((link) => (
                         <LinkCard key={link.href} {...link} />
                     ))}
