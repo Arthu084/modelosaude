@@ -6,10 +6,6 @@ import Link from 'next/link';
 import {
   MapPin,
   CheckCircle2,
-  Coffee,
-  Sparkles,
-  ParkingCircle,
-  Wifi,
   Stethoscope,
   Menu,
 } from 'lucide-react';
@@ -59,13 +55,6 @@ const benefits = [
   { text: 'Atendimento humanizado, sem pressa' },
 ];
 
-const clinicFeatures = [
-    { icon: Coffee, text: "Ambiente climatizado e confortável com café e água à disposição." },
-    { icon: Sparkles, text: "Equipamentos modernos para diagnósticos e tratamentos precisos." },
-    { icon: Wifi, text: "Wi-Fi cortesia para pacientes e acompanhantes em nossa sala de espera." },
-    { icon: ParkingCircle, text: "Localização privilegiada com estacionamento conveniado próximo." },
-]
-
 const treatmentItems = [
     { icon: Stethoscope, text: "Controle da acne e manchas" },
     { icon: Stethoscope, text: "Preenchimento facial e toxina botulínica" },
@@ -92,7 +81,6 @@ const menuLinks = [
   { href: "#benefits", label: "Como posso te ajudar" },
   { href: "#treatments", label: "Tratamentos" },
   { href: "#testimonials", label: "Depoimentos" },
-  { href: "#clinic-features", label: "Diferenciais da Clínica" },
   { href: "#faq", label: "Perguntas Frequentes" },
   { href: "#location", label: "Nossa Localização" },
 ];
@@ -280,14 +268,6 @@ export default function Home() {
         <section id="clinic-features" className="py-8 bg-primary/5">
           <div className="container mx-auto px-4 max-w-4xl">
             <h2 className="text-xl font-bold text-center mb-4">Diferenciais da clínica</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-0">
-              {clinicFeatures.map((feature, index) => (
-                <div key={index} className="flex items-center p-2 rounded-lg">
-                  <feature.icon className="h-7 w-7 text-primary mr-4 flex-shrink-0" />
-                  <p className="text-md text-foreground/80">{feature.text}</p>
-                </div>
-              ))}
-            </div>
             {heroImage && (
               <div className="mt-6">
                 <Image
