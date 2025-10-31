@@ -91,7 +91,7 @@ export function TestimonialCarousel() {
           ))}
         </CarouselContent>
       </Carousel>
-      <div className="flex justify-center gap-2 mt-8">
+      <div className="flex justify-center gap-2 mt-4">
         {Array.from({ length: count }).map((_, index) => (
           <button
             key={index}
@@ -107,3 +107,5 @@ export function TestimonialCarousel() {
     </div>
   );
 }
+
+    
